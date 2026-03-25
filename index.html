@@ -1,0 +1,1514 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DigitalMatis — Le digital au service de vos ambitions</title>
+  <meta name="description" content="DigitalMatis : développement logiciel, formations Python & Data, et SaaS pour cabinets médicaux. Basé à Dakar, nous digitalisons vos ambitions." />
+
+  <!-- Tailwind Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy:   { DEFAULT: '#1A3471', light: '#2A4A9A', dark: '#0F1F4A', deeper: '#0A1228' },
+            orange: { DEFAULT: '#F47920', light: '#FF9A45', dark: '#D4640F' },
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+          },
+          animation: {
+            'fade-up':    'fadeUp 0.6s ease forwards',
+            'fade-in':    'fadeIn 0.6s ease forwards',
+            'float':      'float 4s ease-in-out infinite',
+            'pulse-slow': 'pulse 3s ease-in-out infinite',
+            'typing':     'typing 3.5s steps(40) infinite',
+          },
+          keyframes: {
+            fadeUp:  { '0%': { opacity: 0, transform: 'translateY(30px)' }, '100%': { opacity: 1, transform: 'translateY(0)' } },
+            fadeIn:  { '0%': { opacity: 0 }, '100%': { opacity: 1 } },
+            float:   { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-12px)' } },
+            typing:  { '0%': { width: 0 }, '60%,100%': { width: '100%' } },
+          },
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- EmailJS -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    // ⚙️ Remplacer YOUR_PUBLIC_KEY par ta clé EmailJS (emailjs.com → Account → Public Key)
+    emailjs.init({ publicKey: 'fFLgVJBp7aB5fvqLo' });
+  </script>
+</head>
+
+<body class="font-sans bg-white text-gray-800 antialiased">
+
+<!-- ════════════════════════════════════════════════
+     NAVBAR
+════════════════════════════════════════════════ -->
+<header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20">
+
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-3 flex-shrink-0">
+        <div class="logo-wrapper">
+          <img src="assets/images/logo.png" alt="DigitalMatis" class="h-12 w-auto" />
+        </div>
+      </a>
+
+      <!-- Nav Desktop -->
+      <nav class="hidden lg:flex items-center gap-8">
+        <a href="#services"    class="nav-link text-sm font-600 text-white/90 hover:text-orange transition-colors">Services</a>
+        <a href="#saas"        class="nav-link text-sm font-600 text-white/90 hover:text-orange transition-colors">Gynaeasy</a>
+        <a href="#academy"     class="nav-link text-sm font-600 text-white/90 hover:text-orange transition-colors">Academy</a>
+        <a href="#portfolio"   class="nav-link text-sm font-600 text-white/90 hover:text-orange transition-colors">Portfolio</a>
+        <a href="#contact"     class="nav-link text-sm font-600 text-white/90 hover:text-orange transition-colors">Contact</a>
+      </nav>
+
+      <!-- CTA -->
+      <div class="hidden lg:flex items-center gap-4">
+        <a href="#contact" class="btn-primary text-sm px-5 py-2.5 rounded-xl font-semibold bg-orange text-white hover:bg-orange-dark transition-all shadow-lg shadow-orange/25 hover:shadow-orange/40 hover:-translate-y-0.5">
+          Démarrer un projet
+        </a>
+      </div>
+
+      <!-- Burger Mobile -->
+      <button id="burger" class="lg:hidden flex flex-col gap-1.5 p-2 text-white" aria-label="Menu">
+        <span class="burger-line w-6 h-0.5 bg-current transition-all"></span>
+        <span class="burger-line w-6 h-0.5 bg-current transition-all"></span>
+        <span class="burger-line w-4 h-0.5 bg-current transition-all"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden lg:hidden bg-navy-dark/95 backdrop-blur-md border-t border-white/10">
+    <nav class="flex flex-col px-6 py-6 gap-4">
+      <a href="#services"  class="text-white/90 hover:text-orange font-medium py-2 transition-colors">Services</a>
+      <a href="#saas"      class="text-white/90 hover:text-orange font-medium py-2 transition-colors">Gynaeasy</a>
+      <a href="#academy"   class="text-white/90 hover:text-orange font-medium py-2 transition-colors">Academy</a>
+      <a href="#portfolio" class="text-white/90 hover:text-orange font-medium py-2 transition-colors">Portfolio</a>
+      <a href="#contact"   class="text-white/90 hover:text-orange font-medium py-2 transition-colors">Contact</a>
+      <a href="#contact"   class="mt-2 btn-primary text-center px-5 py-3 rounded-xl font-semibold bg-orange text-white">Démarrer un projet</a>
+    </nav>
+  </div>
+</header>
+
+
+<!-- ════════════════════════════════════════════════
+     HERO
+════════════════════════════════════════════════ -->
+<section id="hero" class="relative min-h-screen flex items-center overflow-hidden bg-navy-deeper">
+
+  <!-- Background grid -->
+  <div class="absolute inset-0 bg-grid opacity-20"></div>
+
+  <!-- Gradient blobs -->
+  <div class="absolute top-1/4 -left-32 w-96 h-96 bg-orange/20 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-1/4 -right-32 w-96 h-96 bg-navy-light/40 rounded-full blur-3xl"></div>
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-navy/30 rounded-full blur-3xl"></div>
+
+  <div class="relative max-w-7xl mx-auto px-6 lg:px-8 pt-24 pb-16">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+      <!-- Left — Text -->
+      <div class="reveal-left">
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 bg-orange/10 border border-orange/30 rounded-full px-4 py-1.5 mb-6">
+          <span class="w-2 h-2 rounded-full bg-orange animate-pulse"></span>
+          <span class="text-orange text-sm font-semibold">Agence digitale · Dakar, Sénégal</span>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
+          Le digital au service<br />
+          de <span class="text-gradient">vos ambitions</span>
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="text-lg text-white/70 leading-relaxed mb-8 max-w-lg">
+          Développement logiciel sur mesure, formations Python & Data, et solutions SaaS pour cabinets médicaux. On transforme vos idées en produits qui durent.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-wrap gap-4 mb-12">
+          <a href="#services" class="px-7 py-3.5 rounded-xl bg-orange hover:bg-orange-dark text-white font-semibold shadow-lg shadow-orange/30 hover:shadow-orange/50 hover:-translate-y-0.5 transition-all">
+            Découvrir nos services
+          </a>
+          <a href="#portfolio" class="px-7 py-3.5 rounded-xl border border-white/20 text-white hover:border-orange hover:text-orange font-semibold transition-all">
+            Voir nos réalisations
+          </a>
+        </div>
+
+        <!-- Mini stats -->
+        <div class="flex flex-wrap gap-8">
+          <div>
+            <div class="text-3xl font-extrabold text-white">50<span class="text-orange">+</span></div>
+            <div class="text-sm text-white/50 mt-0.5">Projets livrés</div>
+          </div>
+          <div class="w-px bg-white/10"></div>
+          <div>
+            <div class="text-3xl font-extrabold text-white">200<span class="text-orange">+</span></div>
+            <div class="text-sm text-white/50 mt-0.5">Étudiants formés</div>
+          </div>
+          <div class="w-px bg-white/10"></div>
+          <div>
+            <div class="text-3xl font-extrabold text-white">5<span class="text-orange">+</span></div>
+            <div class="text-sm text-white/50 mt-0.5">Années d'expertise</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right — Code card -->
+      <div class="reveal-right hidden lg:block">
+        <div class="relative">
+          <!-- Main card -->
+          <div class="bg-navy/80 border border-white/10 rounded-2xl overflow-hidden shadow-2xl shadow-navy-deeper/50 backdrop-blur-sm animate-float">
+            <!-- Code editor header -->
+            <div class="flex items-center gap-2 px-5 py-3.5 bg-white/5 border-b border-white/10">
+              <div class="w-3 h-3 rounded-full bg-red-400"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+              <div class="w-3 h-3 rounded-full bg-green-400"></div>
+              <span class="ml-3 text-white/40 text-xs font-mono">digitalmatis.py</span>
+            </div>
+            <!-- Code content -->
+            <pre class="p-6 text-sm font-mono leading-relaxed overflow-x-auto"><code><span class="text-blue-400">from</span> <span class="text-white">digitalmatis</span> <span class="text-blue-400">import</span> <span class="text-orange">Solutions</span>
+
+<span class="text-gray-500"># Votre partenaire digital</span>
+<span class="text-white">projet</span> <span class="text-blue-400">=</span> <span class="text-orange">Solutions</span><span class="text-white">(</span>
+    <span class="text-green-400">client</span><span class="text-white">=</span><span class="text-yellow-300">"Votre entreprise"</span><span class="text-white">,</span>
+    <span class="text-green-400">services</span><span class="text-white">=[</span>
+        <span class="text-yellow-300">"Développement logiciel"</span><span class="text-white">,</span>
+        <span class="text-yellow-300">"Formation Python &amp; Data"</span><span class="text-white">,</span>
+        <span class="text-yellow-300">"SaaS Médical"</span><span class="text-white">,</span>
+    <span class="text-white">],</span>
+    <span class="text-green-400">qualite</span><span class="text-white">=</span><span class="text-orange">True</span>
+<span class="text-white">)</span>
+
+<span class="text-white">projet</span><span class="text-blue-400">.</span><span class="text-orange-light">lancer</span><span class="text-white">()</span> <span class="text-gray-500"># ✓ Succès garanti</span>
+</code></pre>
+          </div>
+
+          <!-- Floating badge 1 -->
+          <div class="absolute -top-4 -right-4 bg-orange rounded-2xl px-4 py-3 shadow-xl shadow-orange/40 animate-pulse-slow">
+            <div class="text-white text-xs font-bold">🚀 Projet livré</div>
+            <div class="text-white/70 text-xs">en 4 semaines</div>
+          </div>
+
+          <!-- Floating badge 2 -->
+          <div class="absolute -bottom-4 -left-4 bg-navy border border-white/20 rounded-2xl px-4 py-3 shadow-xl">
+            <div class="text-white text-xs font-bold">⭐ 4.9/5</div>
+            <div class="text-white/50 text-xs">satisfaction client</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/30 animate-bounce">
+    <span class="text-xs font-medium tracking-widest uppercase">Scroll</span>
+    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════
+     STATS BAR
+════════════════════════════════════════════════ -->
+<section class="bg-navy py-10 border-y border-white/5">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 lg:divide-x divide-white/10">
+      <div class="text-center px-6 reveal-up">
+        <div class="text-4xl font-extrabold text-white counter" data-target="50">0</div>
+        <div class="text-orange text-sm font-semibold mt-1">Projets livrés</div>
+      </div>
+      <div class="text-center px-6 reveal-up" style="animation-delay:.1s">
+        <div class="text-4xl font-extrabold text-white counter" data-target="200">0</div>
+        <div class="text-orange text-sm font-semibold mt-1">Étudiants formés</div>
+      </div>
+      <div class="text-center px-6 reveal-up" style="animation-delay:.2s">
+        <div class="text-4xl font-extrabold text-white counter" data-target="30">0</div>
+        <div class="text-orange text-sm font-semibold mt-1">Clients satisfaits</div>
+      </div>
+      <div class="text-center px-6 reveal-up" style="animation-delay:.3s">
+        <div class="text-4xl font-extrabold text-white counter" data-target="5">0</div>
+        <div class="text-orange text-sm font-semibold mt-1">Années d'expertise</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════
+     SERVICES
+════════════════════════════════════════════════ -->
+<section id="services" class="py-24 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+    <!-- Heading -->
+    <div class="text-center mb-16 reveal-up">
+      <span class="section-badge">Ce que nous faisons</span>
+      <h2 class="section-title mt-3">Nos <span class="text-orange">services</span></h2>
+      <p class="section-sub">Expertises complémentaires et applications prêtes à l'emploi pour accélérer votre transformation digitale.</p>
+    </div>
+
+    <!-- Cards -->
+    <div class="grid md:grid-cols-3 gap-8">
+
+      <!-- Card 1 -->
+      <div class="service-card reveal-up group" style="animation-delay:.1s">
+        <div class="service-icon bg-navy/10 group-hover:bg-navy transition-colors">
+          <svg class="w-7 h-7 text-navy group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-navy mt-5 mb-3">Développement Logiciel</h3>
+        <p class="text-gray-500 text-sm leading-relaxed mb-5">Applications web, API REST, automatisation et solutions sur mesure en Python, Java et JavaScript. Du backend robuste au frontend moderne.</p>
+        <ul class="space-y-2 mb-6">
+          <li class="flex items-center gap-2 text-sm text-gray-600"><span class="w-1.5 h-1.5 rounded-full bg-orange flex-shrink-0"></span>Applications web & mobile</li>
+          <li class="flex items-center gap-2 text-sm text-gray-600"><span class="w-1.5 h-1.5 rounded-full bg-orange flex-shrink-0"></span>API & microservices</li>
+          <li class="flex items-center gap-2 text-sm text-gray-600"><span class="w-1.5 h-1.5 rounded-full bg-orange flex-shrink-0"></span>Automatisation & scripts</li>
+        </ul>
+        <a href="#contact" class="service-link text-navy group-hover:text-orange">Demander un devis →</a>
+      </div>
+
+      <!-- Card 2 — Featured -->
+      <div class="service-card service-card-featured reveal-up" style="animation-delay:.2s">
+        <div class="absolute top-4 right-4 bg-orange text-white text-xs font-bold px-3 py-1 rounded-full">Populaire</div>
+        <div class="service-icon bg-white/20">
+          <svg class="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-white mt-5 mb-3">Formations Python & Data</h3>
+        <p class="text-white/70 text-sm leading-relaxed mb-5">Apprenez Python de zéro ou perfectionnez vos compétences en Data Science, Machine Learning et visualisation de données.</p>
+        <ul class="space-y-2 mb-6">
+          <li class="flex items-center gap-2 text-sm text-white/80"><span class="w-1.5 h-1.5 rounded-full bg-orange-light flex-shrink-0"></span>Python fondamental & avancé</li>
+          <li class="flex items-center gap-2 text-sm text-white/80"><span class="w-1.5 h-1.5 rounded-full bg-orange-light flex-shrink-0"></span>Data Science & Analyse</li>
+          <li class="flex items-center gap-2 text-sm text-white/80"><span class="w-1.5 h-1.5 rounded-full bg-orange-light flex-shrink-0"></span>Machine Learning pratique</li>
+        </ul>
+        <a href="#academy" class="service-link text-white hover:text-orange-light">Voir les formations →</a>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="service-card reveal-up group" style="animation-delay:.3s">
+        <div class="service-icon bg-navy/10 group-hover:bg-navy transition-colors">
+          <svg class="w-7 h-7 text-navy group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-navy mt-5 mb-3">SaaS Médical</h3>
+        <p class="text-gray-500 text-sm leading-relaxed mb-5">Solution complète de gestion pour cabinets médicaux : dossiers patients, rendez-vous, facturation et suivi médical en ligne.</p>
+        <ul class="space-y-2 mb-6">
+          <li class="flex items-center gap-2 text-sm text-gray-600"><span class="w-1.5 h-1.5 rounded-full bg-orange flex-shrink-0"></span>Dossiers patients numérisés</li>
+          <li class="flex items-center gap-2 text-sm text-gray-600"><span class="w-1.5 h-1.5 rounded-full bg-orange flex-shrink-0"></span>Gestion des rendez-vous</li>
+          <li class="flex items-center gap-2 text-sm text-gray-600"><span class="w-1.5 h-1.5 rounded-full bg-orange flex-shrink-0"></span>Facturation & statistiques</li>
+        </ul>
+        <a href="https://gynaeasy.vercel.app/" target="_blank" rel="noopener" class="service-link text-navy group-hover:text-orange">Découvrir Gynaeasy →</a>
+      </div>
+
+    </div>
+
+    <!-- ── Séparateur ── -->
+    <div class="mt-20 mb-16 flex items-center gap-4 reveal-up">
+      <div class="flex-1 h-px bg-gray-200"></div>
+      <div class="flex items-center gap-2 bg-navy/5 border border-navy/10 rounded-full px-5 py-2">
+        <span class="w-2 h-2 rounded-full bg-orange animate-pulse"></span>
+        <span class="text-navy font-bold text-sm uppercase tracking-widest">Nos Applications</span>
+      </div>
+      <div class="flex-1 h-px bg-gray-200"></div>
+    </div>
+
+    <!-- ── Subtitle applications ── -->
+    <p class="text-center text-gray-500 text-sm mb-10 -mt-10 reveal-up">
+      Des solutions SaaS prêtes à l'emploi, conçues et maintenues par DigitalMatis.
+    </p>
+
+    <!-- ── App Cards ── -->
+    <div class="grid md:grid-cols-3 gap-8">
+
+      <!-- TicketScan -->
+      <div class="app-card reveal-up group" style="animation-delay:.1s">
+        <div class="app-card-header bg-gradient-to-br from-indigo-600 to-navy">
+          <div class="app-icon">🎟️</div>
+          <div class="app-badge">Leader Sénégal</div>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-extrabold text-navy mb-1">TicketScan</h3>
+          <p class="text-orange text-xs font-semibold uppercase tracking-wider mb-3">Billetterie & Contrôle d'accès</p>
+          <p class="text-gray-500 text-sm leading-relaxed mb-5">La solution leader pour la gestion de billetterie et le contrôle d'accès événementiel au Sénégal. Sécurisé, rapide et intuitif.</p>
+          <ul class="space-y-2.5 mb-6">
+            <li class="app-feature"><span class="app-dot bg-indigo-500"></span>Vente en ligne multi-canal</li>
+            <li class="app-feature"><span class="app-dot bg-indigo-500"></span>Contrôle d'accès temps réel</li>
+            <li class="app-feature"><span class="app-dot bg-indigo-500"></span>Tableau de bord analytics</li>
+            <li class="app-feature"><span class="app-dot bg-indigo-500"></span>Support 24/7 sur site</li>
+          </ul>
+          <a href="#contact" class="app-cta bg-indigo-600 hover:bg-indigo-700">Demander une démo →</a>
+        </div>
+      </div>
+
+      <!-- PayConnect -->
+      <div class="app-card reveal-up group" style="animation-delay:.2s">
+        <div class="app-card-header bg-gradient-to-br from-emerald-500 to-teal-700">
+          <div class="app-icon">💳</div>
+          <div class="app-badge">PCI DSS</div>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-extrabold text-navy mb-1">PayConnect</h3>
+          <p class="text-orange text-xs font-semibold uppercase tracking-wider mb-3">Paiements unifiés</p>
+          <p class="text-gray-500 text-sm leading-relaxed mb-5">Unifiez vos méthodes de paiement. Une plateforme unique pour accepter Orange Money, Wave, Free Money et cartes bancaires.</p>
+          <ul class="space-y-2.5 mb-6">
+            <li class="app-feature"><span class="app-dot bg-emerald-500"></span>API de paiement unifiée</li>
+            <li class="app-feature"><span class="app-dot bg-emerald-500"></span>Intégration e-commerce facile</li>
+            <li class="app-feature"><span class="app-dot bg-emerald-500"></span>Reporting centralisé</li>
+            <li class="app-feature"><span class="app-dot bg-emerald-500"></span>Sécurité bancaire (PCI DSS)</li>
+          </ul>
+          <a href="#contact" class="app-cta bg-emerald-600 hover:bg-emerald-700">Intégrer PayConnect →</a>
+        </div>
+      </div>
+
+      <!-- MatisChange -->
+      <div class="app-card reveal-up group" style="animation-delay:.3s">
+        <div class="app-card-header bg-gradient-to-br from-amber-500 to-orange">
+          <div class="app-icon">₿</div>
+          <div class="app-badge">Zone UEMOA</div>
+        </div>
+        <div class="p-6">
+          <h3 class="text-xl font-extrabold text-navy mb-1">MatisChange</h3>
+          <p class="text-orange text-xs font-semibold uppercase tracking-wider mb-3">Exchange Crypto · UEMOA</p>
+          <p class="text-gray-500 text-sm leading-relaxed mb-5">La plateforme d'échange crypto pensée pour la zone UEMOA. Convertissez facilement entre XOF, USDT, BTC et ETH via Mobile Money.</p>
+          <ul class="space-y-2.5 mb-5">
+            <li class="app-feature"><span class="app-dot bg-amber-500"></span>XOF ↔ USDT / BTC / ETH</li>
+            <li class="app-feature"><span class="app-dot bg-amber-500"></span>Dépôt via Orange Money & Wave</li>
+            <li class="app-feature"><span class="app-dot bg-amber-500"></span>Taux de change en temps réel</li>
+            <li class="app-feature"><span class="app-dot bg-amber-500"></span>Conforme BCEAO & KYC intégré</li>
+          </ul>
+          <!-- Pays UEMOA -->
+          <div class="mb-5">
+            <p class="text-xs text-gray-400 font-semibold uppercase tracking-wider mb-2">Disponible dans 8 pays</p>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="uemoa-country">🇸🇳 Sénégal</span>
+              <span class="uemoa-country">🇨🇮 Côte d'Ivoire</span>
+              <span class="uemoa-country">🇲🇱 Mali</span>
+              <span class="uemoa-country">🇧🇫 Burkina Faso</span>
+              <span class="uemoa-country">🇳🇪 Niger</span>
+              <span class="uemoa-country">🇧🇯 Bénin</span>
+              <span class="uemoa-country">🇹🇬 Togo</span>
+              <span class="uemoa-country">🇬🇼 Guinée-Bissau</span>
+            </div>
+          </div>
+          <a href="#contact" class="app-cta bg-amber-500 hover:bg-amber-600">Découvrir MatisChange →</a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════
+     À PROPOS
+════════════════════════════════════════════════ -->
+<section id="about" class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+      <!-- Left — Visual : Carte profil tech -->
+      <div class="reveal-left relative">
+        <div class="profile-card-wrap">
+
+          <!-- Header -->
+          <div class="profile-header">
+            <div class="profile-avatar">E</div>
+            <div>
+              <div class="text-white font-extrabold text-lg leading-tight">Elias</div>
+              <div class="text-orange text-xs font-semibold mt-0.5">Software Engineer · Dakar 🇸🇳</div>
+            </div>
+            <div class="ml-auto flex items-center gap-1.5 bg-green-500/20 border border-green-500/30 rounded-full px-3 py-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
+              <span class="text-green-400 text-xs font-semibold">Disponible</span>
+            </div>
+          </div>
+
+          <!-- Stats grid -->
+          <div class="grid grid-cols-3 gap-3 mb-4">
+            <div class="profile-stat">
+              <div class="text-2xl font-extrabold text-white">50<span class="text-orange text-lg">+</span></div>
+              <div class="text-white/40 text-xs mt-0.5">Projets</div>
+            </div>
+            <div class="profile-stat">
+              <div class="text-2xl font-extrabold text-white">200<span class="text-orange text-lg">+</span></div>
+              <div class="text-white/40 text-xs mt-0.5">Étudiants</div>
+            </div>
+            <div class="profile-stat">
+              <div class="text-2xl font-extrabold text-white">15<span class="text-orange text-lg">+</span></div>
+              <div class="text-white/40 text-xs mt-0.5">Années</div>
+            </div>
+          </div>
+
+          <!-- Stack / compétences -->
+          <div class="mb-4">
+            <div class="text-white/40 text-xs font-semibold uppercase tracking-wider mb-2">Stack</div>
+            <div class="flex flex-wrap gap-2">
+              <span class="skill-tag">🐍 Python</span>
+              <span class="skill-tag">☕ Java</span>
+              <span class="skill-tag">⚛️ React</span>
+              <span class="skill-tag">🗄️ Django</span>
+              <span class="skill-tag">📊 Data Science</span>
+              <span class="skill-tag">🤖 ML</span>
+            </div>
+          </div>
+
+          <!-- Activité (GitHub style) -->
+          <div class="mb-4">
+            <div class="text-white/40 text-xs font-semibold uppercase tracking-wider mb-2">Activité récente</div>
+            <div class="flex gap-1 flex-wrap">
+              <!-- 35 carrés simulant un heatmap -->
+              <span class="activity-block opacity-20"></span><span class="activity-block opacity-40"></span><span class="activity-block opacity-80"></span><span class="activity-block opacity-100"></span><span class="activity-block opacity-60"></span>
+              <span class="activity-block opacity-40"></span><span class="activity-block opacity-100"></span><span class="activity-block opacity-80"></span><span class="activity-block opacity-20"></span><span class="activity-block opacity-60"></span>
+              <span class="activity-block opacity-80"></span><span class="activity-block opacity-40"></span><span class="activity-block opacity-100"></span><span class="activity-block opacity-60"></span><span class="activity-block opacity-80"></span>
+              <span class="activity-block opacity-20"></span><span class="activity-block opacity-60"></span><span class="activity-block opacity-100"></span><span class="activity-block opacity-80"></span><span class="activity-block opacity-40"></span>
+              <span class="activity-block opacity-100"></span><span class="activity-block opacity-60"></span><span class="activity-block opacity-40"></span><span class="activity-block opacity-80"></span><span class="activity-block opacity-100"></span>
+              <span class="activity-block opacity-60"></span><span class="activity-block opacity-20"></span><span class="activity-block opacity-80"></span><span class="activity-block opacity-100"></span><span class="activity-block opacity-60"></span>
+              <span class="activity-block opacity-80"></span><span class="activity-block opacity-100"></span><span class="activity-block opacity-40"></span><span class="activity-block opacity-60"></span><span class="activity-block opacity-100"></span>
+            </div>
+          </div>
+
+          <!-- Produits -->
+          <div>
+            <div class="text-white/40 text-xs font-semibold uppercase tracking-wider mb-2">Produits actifs</div>
+            <div class="space-y-2">
+              <div class="flex items-center justify-between bg-white/5 rounded-lg px-3 py-2">
+                <span class="text-white text-xs font-semibold">🏥 Gynaeasy</span>
+                <span class="text-green-400 text-xs">● Live</span>
+              </div>
+              <div class="flex items-center justify-between bg-white/5 rounded-lg px-3 py-2">
+                <span class="text-white text-xs font-semibold">🎟️ TicketScan</span>
+                <span class="text-green-400 text-xs">● Live</span>
+              </div>
+              <div class="flex items-center justify-between bg-white/5 rounded-lg px-3 py-2">
+                <span class="text-white text-xs font-semibold">💳 PayConnect</span>
+                <span class="text-blue-400 text-xs">◎ Beta</span>
+              </div>
+              <div class="flex items-center justify-between bg-white/5 rounded-lg px-3 py-2">
+                <span class="text-white text-xs font-semibold">₿ MatisChange</span>
+                <span class="text-amber-400 text-xs">◎ Beta</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Decor card -->
+        <div class="absolute -bottom-6 -right-6 bg-orange rounded-2xl px-6 py-4 shadow-xl shadow-orange/30 hidden lg:block">
+          <div class="text-white font-extrabold text-2xl">15+</div>
+          <div class="text-white/80 text-xs font-medium">ans d'expérience</div>
+        </div>
+      </div>
+
+      <!-- Right — Text -->
+      <div class="reveal-right">
+        <span class="section-badge">À propos</span>
+        <h2 class="section-title mt-3">Elias & <span class="text-orange">DigitalMatis</span></h2>
+        <p class="text-gray-500 leading-relaxed mt-4 mb-4">
+          DigitalMatis, c'est une agence digitale fondée par Elias, software engineer passionné basé à Dakar. Notre mission : mettre la puissance de la technologie au service des entrepreneurs, PME et professionnels de santé en Afrique et dans le monde.
+        </p>
+        <p class="text-gray-500 leading-relaxed mb-8">
+          De la ligne de code au déploiement en production, chaque projet est traité avec rigueur, créativité et une vraie vision produit. Nous croyons que la qualité technique et l'expérience utilisateur ne sont pas négociables.
+        </p>
+
+        <!-- Values -->
+        <div class="grid grid-cols-2 gap-4 mb-8">
+
+          <div class="value-card group">
+            <div class="value-icon bg-orange/10 group-hover:bg-orange transition-colors">
+              <svg class="w-5 h-5 text-orange group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+              </svg>
+            </div>
+            <div>
+              <div class="font-bold text-navy text-sm">Orienté résultat</div>
+              <div class="text-xs text-gray-400 mt-0.5">On livre ce qu'on promet</div>
+            </div>
+          </div>
+
+          <div class="value-card group">
+            <div class="value-icon bg-blue-50 group-hover:bg-navy transition-colors">
+              <svg class="w-5 h-5 text-navy group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+            </div>
+            <div>
+              <div class="font-bold text-navy text-sm">Agilité</div>
+              <div class="text-xs text-gray-400 mt-0.5">Itérations rapides</div>
+            </div>
+          </div>
+
+          <div class="value-card group">
+            <div class="value-icon bg-emerald-50 group-hover:bg-emerald-500 transition-colors">
+              <svg class="w-5 h-5 text-emerald-500 group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+              </svg>
+            </div>
+            <div>
+              <div class="font-bold text-navy text-sm">Fiabilité</div>
+              <div class="text-xs text-gray-400 mt-0.5">Code propre & sécurisé</div>
+            </div>
+          </div>
+
+          <div class="value-card group">
+            <div class="value-icon bg-amber-50 group-hover:bg-amber-500 transition-colors">
+              <svg class="w-5 h-5 text-amber-500 group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <div>
+              <div class="font-bold text-navy text-sm">Vision Afrique</div>
+              <div class="text-xs text-gray-400 mt-0.5">Tech locale, standard global</div>
+            </div>
+          </div>
+
+        </div>
+
+        <a href="#contact" class="inline-flex items-center gap-2 px-7 py-3.5 bg-navy text-white rounded-xl font-semibold hover:bg-navy-light transition-all hover:-translate-y-0.5 shadow-lg shadow-navy/20">
+          Travaillons ensemble
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════
+     SAAS MÉDICAL
+════════════════════════════════════════════════ -->
+<section id="saas" class="py-24 bg-navy-deeper relative overflow-hidden">
+  <div class="absolute inset-0 bg-grid opacity-10"></div>
+  <div class="absolute top-0 right-0 w-96 h-96 bg-orange/10 rounded-full blur-3xl"></div>
+
+  <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
+
+    <!-- Heading -->
+    <div class="text-center mb-16 reveal-up">
+      <span class="section-badge-dark">Notre produit phare</span>
+      <h2 class="section-title text-white mt-3"><span class="text-orange">Medi</span>Saas</h2>
+      <p class="section-sub text-white/50">La solution digitale complète pour les cabinets médicaux. Gérez vos patients, rendez-vous et factures depuis un seul tableau de bord.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+      <!-- Left — Features -->
+      <div class="reveal-left">
+        <div class="space-y-5">
+          <div class="saas-feature">
+            <div class="saas-feature-icon">👤</div>
+            <div>
+              <h4 class="font-bold text-white">Dossiers patients numérisés</h4>
+              <p class="text-white/50 text-sm mt-1">Historique médical complet, ordonnances, résultats d'analyse — tout centralisé et sécurisé.</p>
+            </div>
+          </div>
+          <div class="saas-feature">
+            <div class="saas-feature-icon">📅</div>
+            <div>
+              <h4 class="font-bold text-white">Agenda intelligent</h4>
+              <p class="text-white/50 text-sm mt-1">Gestion des rendez-vous avec rappels automatiques par SMS/email pour réduire les absences.</p>
+            </div>
+          </div>
+          <div class="saas-feature">
+            <div class="saas-feature-icon">💳</div>
+            <div>
+              <h4 class="font-bold text-white">Facturation simplifiée</h4>
+              <p class="text-white/50 text-sm mt-1">Générez et envoyez des factures en 2 clics. Suivi des paiements et relances automatiques.</p>
+            </div>
+          </div>
+          <div class="saas-feature">
+            <div class="saas-feature-icon">📊</div>
+            <div>
+              <h4 class="font-bold text-white">Tableau de bord analytique</h4>
+              <p class="text-white/50 text-sm mt-1">Statistiques en temps réel : consultations, revenus, taux d'occupation — pilotez votre cabinet.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap gap-4 mt-10">
+          <a href="https://gynaeasy.vercel.app/" target="_blank" rel="noopener" class="px-6 py-3.5 bg-orange hover:bg-orange-dark text-white rounded-xl font-semibold shadow-lg shadow-orange/30 transition-all hover:-translate-y-0.5 inline-flex items-center gap-2">
+            Accéder à l'application
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+          </a>
+          <a href="#contact" class="px-6 py-3.5 border border-white/20 text-white hover:border-orange hover:text-orange rounded-xl font-semibold transition-all">
+            Demander une démo
+          </a>
+        </div>
+      </div>
+
+      <!-- Right — Dashboard mockup -->
+      <div class="reveal-right">
+        <div class="bg-navy border border-white/10 rounded-2xl overflow-hidden shadow-2xl">
+          <!-- Browser bar -->
+          <div class="flex items-center gap-2 px-5 py-3 bg-white/5 border-b border-white/10">
+            <div class="w-2.5 h-2.5 rounded-full bg-red-400"></div>
+            <div class="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
+            <div class="w-2.5 h-2.5 rounded-full bg-green-400"></div>
+            <div class="ml-4 flex-1 bg-white/10 rounded-full px-4 py-1 text-white/30 text-xs">gynaeasy.vercel.app</div>
+          </div>
+          <!-- Dashboard content -->
+          <div class="p-5">
+            <!-- Header -->
+            <div class="flex items-center justify-between mb-5">
+              <div>
+                <div class="text-white font-bold text-sm">Bonjour Dr. Diallo 👋</div>
+                <div class="text-white/40 text-xs">Mercredi 25 Mars 2026</div>
+              </div>
+              <div class="w-8 h-8 rounded-full bg-orange flex items-center justify-center text-white text-xs font-bold">D</div>
+            </div>
+            <!-- Stat cards -->
+            <div class="grid grid-cols-3 gap-3 mb-5">
+              <div class="bg-white/5 rounded-xl p-3 text-center">
+                <div class="text-orange font-extrabold text-xl">12</div>
+                <div class="text-white/40 text-xs mt-1">RDV aujourd'hui</div>
+              </div>
+              <div class="bg-white/5 rounded-xl p-3 text-center">
+                <div class="text-green-400 font-extrabold text-xl">347</div>
+                <div class="text-white/40 text-xs mt-1">Patients actifs</div>
+              </div>
+              <div class="bg-white/5 rounded-xl p-3 text-center">
+                <div class="text-blue-400 font-extrabold text-xl">98%</div>
+                <div class="text-white/40 text-xs mt-1">Taux présence</div>
+              </div>
+            </div>
+            <!-- Patient list -->
+            <div class="bg-white/5 rounded-xl p-4">
+              <div class="text-white/60 text-xs font-semibold mb-3 uppercase tracking-wider">Prochains rendez-vous</div>
+              <div class="space-y-2.5">
+                <div class="flex items-center gap-3">
+                  <div class="w-7 h-7 rounded-full bg-orange/20 flex items-center justify-center text-orange text-xs font-bold">A</div>
+                  <div class="flex-1">
+                    <div class="text-white text-xs font-medium">Aminata Fall</div>
+                    <div class="text-white/30 text-xs">09:00 — Consultation</div>
+                  </div>
+                  <div class="text-green-400 text-xs">Confirmé</div>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="w-7 h-7 rounded-full bg-blue-400/20 flex items-center justify-center text-blue-400 text-xs font-bold">M</div>
+                  <div class="flex-1">
+                    <div class="text-white text-xs font-medium">Moussa Ndiaye</div>
+                    <div class="text-white/30 text-xs">10:30 — Suivi</div>
+                  </div>
+                  <div class="text-yellow-400 text-xs">En attente</div>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="w-7 h-7 rounded-full bg-purple-400/20 flex items-center justify-center text-purple-400 text-xs font-bold">F</div>
+                  <div class="flex-1">
+                    <div class="text-white text-xs font-medium">Fatou Sarr</div>
+                    <div class="text-white/30 text-xs">11:15 — Urgence</div>
+                  </div>
+                  <div class="text-orange text-xs">Urgent</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════
+     MATIS ACADEMY
+════════════════════════════════════════════════ -->
+<section id="academy" class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+    <!-- Heading -->
+    <div class="text-center mb-16 reveal-up">
+      <span class="section-badge">Apprendre avec nous</span>
+      <h2 class="section-title mt-3">Matis <span class="text-orange">Academy</span></h2>
+      <p class="section-sub">Des formations pratiques, en français, conçues pour les professionnels et les débutants qui veulent maîtriser Python et la Data.</p>
+    </div>
+
+    <!-- Formation cards -->
+    <div class="grid md:grid-cols-3 gap-8 mb-12">
+
+      <!-- Formation 1 -->
+      <div class="academy-card reveal-up" style="animation-delay:.1s">
+        <div class="academy-banner bg-gradient-to-br from-[#306998] to-[#FFD43B] relative overflow-hidden">
+          <!-- Python official logo SVG -->
+          <svg viewBox="0 0 256 255" class="w-20 h-20 drop-shadow-xl" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="py-blue" x1="12.959%" y1="12.039%" x2="79.639%" y2="78.201%">
+                <stop offset="0%" stop-color="#387EB8"/>
+                <stop offset="100%" stop-color="#366994"/>
+              </linearGradient>
+              <linearGradient id="py-yellow" x1="19.128%" y1="20.579%" x2="90.742%" y2="88.429%">
+                <stop offset="0%" stop-color="#FFE052"/>
+                <stop offset="100%" stop-color="#FFC331"/>
+              </linearGradient>
+            </defs>
+            <path fill="url(#py-blue)" d="M126.916.072c-64.832 0-60.784 28.115-60.784 28.115l.072 29.128h61.868v8.745H41.631S.145 61.355.145 126.77c0 65.417 36.21 63.097 36.21 63.097h21.61v-30.356s-1.165-36.21 35.632-36.21h61.362s34.475.557 34.475-33.319V33.97S194.67.072 126.916.072zm-34.habitation 19.21c6.129 0 11.092 4.964 11.092 11.093 0 6.129-4.963 11.093-11.092 11.093-6.129 0-11.092-4.964-11.092-11.093 0-6.129 4.963-11.093 11.092-11.093z"/>
+            <path fill="url(#py-yellow)" d="M128.757 254.126c64.832 0 60.784-28.115 60.784-28.115l-.072-29.127H127.6v-8.745h86.441s41.486 4.705 41.486-60.712c0-65.416-36.21-63.096-36.21-63.096h-21.61v30.355s1.165 36.21-35.632 36.21h-61.362s-34.475-.557-34.475 33.32v56.013s-5.235 33.897 62.519 33.897zm34.548-19.21c-6.129 0-11.092-4.963-11.092-11.092 0-6.129 4.963-11.093 11.092-11.093 6.13 0 11.093 4.964 11.093 11.093 0 6.129-4.964 11.092-11.093 11.092z"/>
+          </svg>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-semibold text-orange bg-orange/10 px-2.5 py-1 rounded-full">Débutant</span>
+            <span class="text-xs text-gray-400">6 semaines</span>
+          </div>
+          <h3 class="font-bold text-navy text-lg mb-2">Python Fondamental</h3>
+          <p class="text-gray-500 text-sm mb-4">Apprends les bases de Python : variables, fonctions, structures de données et POO.</p>
+          <div class="flex items-center justify-between">
+            <div class="text-navy font-extrabold text-xl">49 000 <span class="text-sm font-normal text-gray-400">FCFA</span></div>
+            <a href="#contact" class="text-sm font-semibold text-orange hover:underline">S'inscrire →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formation 2 -->
+      <div class="academy-card reveal-up" style="animation-delay:.2s">
+        <div class="academy-banner bg-gradient-to-br from-[#1a1a2e] to-[#16213e] relative overflow-hidden">
+          <!-- Data Science icon — Pandas + chart style -->
+          <div class="flex items-center justify-center gap-3">
+            <!-- Pandas-style icon -->
+            <svg viewBox="0 0 100 100" class="w-16 h-16 drop-shadow-xl" xmlns="http://www.w3.org/2000/svg">
+              <!-- Bar chart bars -->
+              <rect x="8"  y="55" width="16" height="37" rx="3" fill="#E8834A" opacity="0.9"/>
+              <rect x="30" y="35" width="16" height="57" rx="3" fill="#F47920"/>
+              <rect x="52" y="20" width="16" height="72" rx="3" fill="#FF9A45"/>
+              <rect x="74" y="42" width="16" height="50" rx="3" fill="#E8834A" opacity="0.9"/>
+              <!-- Line chart overlay -->
+              <polyline points="16,52 38,32 60,18 82,38" fill="none" stroke="#FFD43B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <!-- Dots on line -->
+              <circle cx="16" cy="52" r="4" fill="#FFD43B"/>
+              <circle cx="38" cy="32" r="4" fill="#FFD43B"/>
+              <circle cx="60" cy="18" r="4" fill="#FFD43B"/>
+              <circle cx="82" cy="38" r="4" fill="#FFD43B"/>
+              <!-- Base line -->
+              <line x1="4" y1="95" x2="96" y2="95" stroke="rgba(255,255,255,0.3)" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <!-- Pandas word-mark simplified -->
+            <div class="flex flex-col items-start">
+              <span class="text-white font-black text-lg leading-none tracking-tight">pandas</span>
+              <span class="text-yellow-300 text-xs font-semibold mt-0.5">numpy · seaborn</span>
+            </div>
+          </div>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-semibold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full">Intermédiaire</span>
+            <span class="text-xs text-gray-400">8 semaines</span>
+          </div>
+          <h3 class="font-bold text-navy text-lg mb-2">Data Science & Analyse</h3>
+          <p class="text-gray-500 text-sm mb-4">Pandas, NumPy, Matplotlib, Seaborn — analysez et visualisez des données réelles.</p>
+          <div class="flex items-center justify-between">
+            <div class="text-navy font-extrabold text-xl">79 000 <span class="text-sm font-normal text-gray-400">FCFA</span></div>
+            <a href="#contact" class="text-sm font-semibold text-orange hover:underline">S'inscrire →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formation 3 -->
+      <div class="academy-card reveal-up" style="animation-delay:.3s">
+        <div class="academy-banner bg-gradient-to-br from-[#1a0533] to-[#6b21a8] relative overflow-hidden">
+          <!-- ML / Neural network icon -->
+          <div class="flex items-center justify-center gap-3">
+            <svg viewBox="0 0 100 100" class="w-16 h-16 drop-shadow-xl" xmlns="http://www.w3.org/2000/svg">
+              <!-- Connections (lines) -->
+              <line x1="18" y1="20" x2="50" y2="35" stroke="rgba(167,139,250,0.6)" stroke-width="1.5"/>
+              <line x1="18" y1="50" x2="50" y2="35" stroke="rgba(167,139,250,0.6)" stroke-width="1.5"/>
+              <line x1="18" y1="80" x2="50" y2="35" stroke="rgba(167,139,250,0.6)" stroke-width="1.5"/>
+              <line x1="18" y1="20" x2="50" y2="65" stroke="rgba(167,139,250,0.4)" stroke-width="1.5"/>
+              <line x1="18" y1="50" x2="50" y2="65" stroke="rgba(167,139,250,0.6)" stroke-width="1.5"/>
+              <line x1="18" y1="80" x2="50" y2="65" stroke="rgba(167,139,250,0.6)" stroke-width="1.5"/>
+              <line x1="50" y1="35" x2="82" y2="30" stroke="rgba(251,191,36,0.7)" stroke-width="1.5"/>
+              <line x1="50" y1="35" x2="82" y2="70" stroke="rgba(251,191,36,0.5)" stroke-width="1.5"/>
+              <line x1="50" y1="65" x2="82" y2="30" stroke="rgba(251,191,36,0.5)" stroke-width="1.5"/>
+              <line x1="50" y1="65" x2="82" y2="70" stroke="rgba(251,191,36,0.7)" stroke-width="1.5"/>
+              <!-- Input layer -->
+              <circle cx="18" cy="20" r="7" fill="#a78bfa"/>
+              <circle cx="18" cy="50" r="7" fill="#a78bfa"/>
+              <circle cx="18" cy="80" r="7" fill="#a78bfa"/>
+              <!-- Hidden layer -->
+              <circle cx="50" cy="35" r="8" fill="#7c3aed"/>
+              <circle cx="50" cy="65" r="8" fill="#7c3aed"/>
+              <!-- Output layer -->
+              <circle cx="82" cy="30" r="7" fill="#fbbf24"/>
+              <circle cx="82" cy="70" r="7" fill="#fbbf24"/>
+            </svg>
+            <div class="flex flex-col items-start">
+              <span class="text-white font-black text-base leading-none tracking-tight">scikit-learn</span>
+              <span class="text-purple-300 text-xs font-semibold mt-0.5">tensorflow · keras</span>
+            </div>
+          </div>
+        </div>
+        <div class="p-6">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-semibold text-purple-600 bg-purple-50 px-2.5 py-1 rounded-full">Avancé</span>
+            <span class="text-xs text-gray-400">10 semaines</span>
+          </div>
+          <h3 class="font-bold text-navy text-lg mb-2">Machine Learning</h3>
+          <p class="text-gray-500 text-sm mb-4">Scikit-learn, modèles de prédiction, classification, régression et évaluation de modèles.</p>
+          <div class="flex items-center justify-between">
+            <div class="text-navy font-extrabold text-xl">99 000 <span class="text-sm font-normal text-gray-400">FCFA</span></div>
+            <a href="#contact" class="text-sm font-semibold text-orange hover:underline">S'inscrire →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA Academy -->
+    <div class="text-center reveal-up">
+      <p class="text-gray-500 mb-4">Formations disponibles en présentiel à Dakar et en ligne.</p>
+      <a href="#contact" class="inline-flex items-center gap-2 px-7 py-3.5 bg-navy text-white rounded-xl font-semibold hover:bg-navy-light transition-all hover:-translate-y-0.5 shadow-lg shadow-navy/20">
+        Voir toutes les formations
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════
+     PORTFOLIO
+════════════════════════════════════════════════ -->
+<section id="portfolio" class="py-24 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+    <div class="text-center mb-16 reveal-up">
+      <span class="section-badge">Nos réalisations</span>
+      <h2 class="section-title mt-3">Projets <span class="text-orange">récents</span></h2>
+      <p class="section-sub">Un aperçu de ce qu'on a construit. Chaque projet est une histoire de collaboration et de résultats.</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+
+      <!-- Project 1 — Gynaeasy -->
+      <div class="portfolio-card group reveal-up" style="animation-delay:.1s">
+        <div class="portfolio-img bg-gradient-to-br from-[#0f1f4a] to-[#1a3471] overflow-hidden">
+          <!-- Mockup dashboard médical -->
+          <div class="w-full h-full flex items-center justify-center p-4">
+            <div class="w-full max-w-[200px] bg-white/10 rounded-xl border border-white/15 overflow-hidden shadow-2xl">
+              <div class="bg-white/10 px-3 py-2 flex items-center gap-1.5 border-b border-white/10">
+                <div class="w-2 h-2 rounded-full bg-red-400"></div>
+                <div class="w-2 h-2 rounded-full bg-yellow-400"></div>
+                <div class="w-2 h-2 rounded-full bg-green-400"></div>
+                <span class="ml-2 text-white/40 text-[9px] font-mono">gynaeasy</span>
+              </div>
+              <div class="p-3 space-y-2">
+                <div class="flex gap-2">
+                  <div class="flex-1 bg-orange/30 rounded-lg p-2 text-center"><div class="text-white font-bold text-sm">12</div><div class="text-white/50 text-[8px]">RDV</div></div>
+                  <div class="flex-1 bg-blue-400/20 rounded-lg p-2 text-center"><div class="text-white font-bold text-sm">347</div><div class="text-white/50 text-[8px]">Patients</div></div>
+                </div>
+                <div class="space-y-1.5">
+                  <div class="h-1.5 bg-white/20 rounded-full w-full"><div class="h-full bg-orange rounded-full w-3/4"></div></div>
+                  <div class="h-1.5 bg-white/20 rounded-full w-full"><div class="h-full bg-blue-400 rounded-full w-1/2"></div></div>
+                  <div class="h-1.5 bg-white/20 rounded-full w-full"><div class="h-full bg-green-400 rounded-full w-4/5"></div></div>
+                </div>
+                <div class="space-y-1">
+                  <div class="flex items-center gap-1.5 bg-white/5 rounded px-2 py-1"><div class="w-3 h-3 rounded-full bg-orange/60 flex-shrink-0"></div><div class="h-1.5 bg-white/20 rounded-full flex-1"></div></div>
+                  <div class="flex items-center gap-1.5 bg-white/5 rounded px-2 py-1"><div class="w-3 h-3 rounded-full bg-blue-400/60 flex-shrink-0"></div><div class="h-1.5 bg-white/20 rounded-full flex-1 w-2/3"></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Hover overlay -->
+          <div class="absolute inset-0 bg-navy/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+            <a href="https://gynaeasy.vercel.app/" target="_blank" rel="noopener" class="flex items-center gap-2 bg-orange text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow-lg hover:bg-orange-dark transition">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              Voir le projet
+            </a>
+          </div>
+        </div>
+        <div class="p-5">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="tag-badge tag-blue">SaaS</span>
+            <span class="tag-badge tag-orange">Python</span>
+          </div>
+          <h3 class="font-bold text-navy mb-1">Gynaeasy — SaaS Médical</h3>
+          <p class="text-gray-500 text-sm">Plateforme SaaS complète pour cabinets médicaux au Sénégal.</p>
+        </div>
+      </div>
+
+      <!-- Project 2 — Dashboard PME -->
+      <div class="portfolio-card group reveal-up" style="animation-delay:.2s">
+        <div class="portfolio-img bg-gradient-to-br from-[#1a0a00] to-[#7c3000] overflow-hidden">
+          <div class="w-full h-full flex items-center justify-center p-4">
+            <div class="w-full max-w-[200px] space-y-2">
+              <!-- KPI row -->
+              <div class="grid grid-cols-3 gap-1.5">
+                <div class="bg-white/10 rounded-lg p-2 text-center border border-white/10">
+                  <div class="text-orange font-bold text-xs">+24%</div>
+                  <div class="text-white/40 text-[7px] mt-0.5">Ventes</div>
+                </div>
+                <div class="bg-white/10 rounded-lg p-2 text-center border border-white/10">
+                  <div class="text-green-400 font-bold text-xs">1.2M</div>
+                  <div class="text-white/40 text-[7px] mt-0.5">Revenus</div>
+                </div>
+                <div class="bg-white/10 rounded-lg p-2 text-center border border-white/10">
+                  <div class="text-blue-400 font-bold text-xs">98%</div>
+                  <div class="text-white/40 text-[7px] mt-0.5">Taux</div>
+                </div>
+              </div>
+              <!-- Bar chart -->
+              <div class="bg-white/10 rounded-xl border border-white/10 p-3">
+                <div class="text-white/40 text-[8px] mb-2 font-semibold uppercase tracking-wider">Ventes mensuelles</div>
+                <div class="flex items-end gap-1.5 h-14">
+                  <div class="flex-1 bg-orange/40 rounded-t" style="height:45%"></div>
+                  <div class="flex-1 bg-orange/60 rounded-t" style="height:65%"></div>
+                  <div class="flex-1 bg-orange/40 rounded-t" style="height:50%"></div>
+                  <div class="flex-1 bg-orange rounded-t" style="height:85%"></div>
+                  <div class="flex-1 bg-orange/60 rounded-t" style="height:70%"></div>
+                  <div class="flex-1 bg-orange rounded-t" style="height:95%"></div>
+                </div>
+              </div>
+              <!-- Trend line -->
+              <div class="bg-white/10 rounded-xl border border-white/10 p-2.5 flex items-center gap-2">
+                <svg viewBox="0 0 60 20" class="w-16 h-5 flex-shrink-0"><polyline points="0,18 10,14 20,10 30,12 40,6 50,4 60,2" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round"/></svg>
+                <div><div class="text-white text-[8px] font-bold">Tendance haussière</div><div class="text-green-400 text-[7px]">+18% ce trimestre</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="absolute inset-0 bg-navy/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+            <a href="#contact" class="flex items-center gap-2 bg-orange text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow-lg hover:bg-orange-dark transition">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              En savoir plus
+            </a>
+          </div>
+        </div>
+        <div class="p-5">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="tag-badge tag-orange">Data</span>
+            <span class="tag-badge tag-blue">Dashboard</span>
+          </div>
+          <h3 class="font-bold text-navy mb-1">Dashboard analytique PME</h3>
+          <p class="text-gray-500 text-sm">Tableau de bord de suivi des ventes et KPIs pour une PME sénégalaise.</p>
+        </div>
+      </div>
+
+      <!-- Project 3 — E-learning -->
+      <div class="portfolio-card group reveal-up" style="animation-delay:.3s">
+        <div class="portfolio-img bg-gradient-to-br from-[#052e16] to-[#166534] overflow-hidden">
+          <div class="w-full h-full flex items-center justify-center p-4">
+            <div class="w-full max-w-[200px] space-y-2">
+              <!-- Header LMS -->
+              <div class="bg-white/10 rounded-xl border border-white/10 px-3 py-2 flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <div class="w-6 h-6 rounded-lg bg-green-500/40 flex items-center justify-center">
+                    <svg class="w-3.5 h-3.5 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253"/></svg>
+                  </div>
+                  <span class="text-white text-[9px] font-bold">Matis LMS</span>
+                </div>
+                <span class="text-green-400 text-[8px]">● Live</span>
+              </div>
+              <!-- Cours list -->
+              <div class="space-y-1.5">
+                <div class="bg-white/10 rounded-lg px-2.5 py-2 border border-white/10">
+                  <div class="flex items-center justify-between mb-1">
+                    <span class="text-white text-[8px] font-semibold">Python Fondamental</span>
+                    <span class="text-green-400 text-[7px]">72%</span>
+                  </div>
+                  <div class="h-1 bg-white/10 rounded-full"><div class="h-full bg-green-400 rounded-full" style="width:72%"></div></div>
+                </div>
+                <div class="bg-white/10 rounded-lg px-2.5 py-2 border border-white/10">
+                  <div class="flex items-center justify-between mb-1">
+                    <span class="text-white text-[8px] font-semibold">Data Science</span>
+                    <span class="text-orange text-[7px]">45%</span>
+                  </div>
+                  <div class="h-1 bg-white/10 rounded-full"><div class="h-full bg-orange rounded-full" style="width:45%"></div></div>
+                </div>
+                <div class="bg-white/10 rounded-lg px-2.5 py-2 border border-white/10">
+                  <div class="flex items-center justify-between mb-1">
+                    <span class="text-white text-[8px] font-semibold">Machine Learning</span>
+                    <span class="text-blue-400 text-[7px]">30%</span>
+                  </div>
+                  <div class="h-1 bg-white/10 rounded-full"><div class="h-full bg-blue-400 rounded-full" style="width:30%"></div></div>
+                </div>
+              </div>
+              <!-- Stats -->
+              <div class="flex gap-1.5">
+                <div class="flex-1 bg-white/10 rounded-lg p-2 text-center border border-white/10">
+                  <div class="text-white font-bold text-xs">200+</div>
+                  <div class="text-white/40 text-[7px]">Étudiants</div>
+                </div>
+                <div class="flex-1 bg-white/10 rounded-lg p-2 text-center border border-white/10">
+                  <div class="text-white font-bold text-xs">12</div>
+                  <div class="text-white/40 text-[7px]">Modules</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="absolute inset-0 bg-navy/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+            <a href="#contact" class="flex items-center gap-2 bg-orange text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow-lg hover:bg-orange-dark transition">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              En savoir plus
+            </a>
+          </div>
+        </div>
+        <div class="p-5">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="tag-badge tag-green">LMS</span>
+            <span class="tag-badge tag-blue">Django</span>
+          </div>
+          <h3 class="font-bold text-navy mb-1">Plateforme e-learning</h3>
+          <p class="text-gray-500 text-sm">Application de gestion de cours et étudiants avec Django & PostgreSQL.</p>
+        </div>
+      </div>
+
+    </div>
+
+      <!-- Project 4 — OBLEX / SGIOB -->
+      <div class="portfolio-card group reveal-up" style="animation-delay:.4s">
+        <div class="portfolio-img bg-gradient-to-br from-[#0a0a1a] to-[#1e1b4b] overflow-hidden">
+          <div class="w-full h-full flex items-center justify-center p-4">
+            <div class="w-full max-w-[210px] space-y-2">
+              <!-- Header OBLEX -->
+              <div class="bg-white/10 rounded-xl border border-white/10 px-3 py-2 flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <div class="w-6 h-6 rounded-lg bg-indigo-500/40 flex items-center justify-center">
+                    <svg class="w-3.5 h-3.5 text-indigo-300" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                  </div>
+                  <span class="text-white text-[9px] font-extrabold tracking-wider">OBLEX</span>
+                </div>
+                <span class="text-indigo-300 text-[8px] font-semibold">UEMOA · BRVM</span>
+              </div>
+              <!-- Obligations table -->
+              <div class="bg-white/10 rounded-xl border border-white/10 p-2.5">
+                <div class="text-white/40 text-[7px] font-bold uppercase tracking-wider mb-1.5">Obligations en cours</div>
+                <div class="space-y-1">
+                  <div class="flex items-center justify-between text-[7px]">
+                    <span class="text-white/80 font-mono">OBL-SN-2024</span>
+                    <span class="text-white/50">6.25%</span>
+                    <span class="text-green-400 font-bold">+0.12%</span>
+                  </div>
+                  <div class="flex items-center justify-between text-[7px]">
+                    <span class="text-white/80 font-mono">OBL-CI-2024</span>
+                    <span class="text-white/50">5.80%</span>
+                    <span class="text-green-400 font-bold">+0.08%</span>
+                  </div>
+                  <div class="flex items-center justify-between text-[7px]">
+                    <span class="text-white/80 font-mono">OBL-ML-2023</span>
+                    <span class="text-white/50">7.10%</span>
+                    <span class="text-red-400 font-bold">-0.03%</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Courbe obligataire -->
+              <div class="bg-white/10 rounded-xl border border-white/10 p-2.5">
+                <div class="flex items-center justify-between mb-1.5">
+                  <span class="text-white/40 text-[7px] font-bold uppercase tracking-wider">Courbe des taux</span>
+                  <span class="text-indigo-300 text-[7px]">BCEAO</span>
+                </div>
+                <svg viewBox="0 0 120 30" class="w-full h-7">
+                  <polyline points="0,25 20,22 40,18 60,14 80,12 100,10 120,9" fill="none" stroke="#818cf8" stroke-width="1.5" stroke-linecap="round"/>
+                  <polyline points="0,25 20,22 40,18 60,14 80,12 100,10 120,9" fill="url(#grad-oblex)" stroke="none"/>
+                  <defs><linearGradient id="grad-oblex" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#818cf8" stop-opacity="0.3"/><stop offset="100%" stop-color="#818cf8" stop-opacity="0"/></linearGradient></defs>
+                  <circle cx="120" cy="9" r="2.5" fill="#818cf8"/>
+                </svg>
+              </div>
+              <!-- Stats row -->
+              <div class="grid grid-cols-3 gap-1">
+                <div class="bg-white/10 rounded-lg p-1.5 text-center border border-white/10">
+                  <div class="text-indigo-300 font-bold text-[9px]">8</div>
+                  <div class="text-white/30 text-[6px]">Banques</div>
+                </div>
+                <div class="bg-white/10 rounded-lg p-1.5 text-center border border-white/10">
+                  <div class="text-yellow-300 font-bold text-[9px]">XOF</div>
+                  <div class="text-white/30 text-[6px]">Devise</div>
+                </div>
+                <div class="bg-white/10 rounded-lg p-1.5 text-center border border-white/10">
+                  <div class="text-green-400 font-bold text-[9px]">Live</div>
+                  <div class="text-white/30 text-[6px]">Statut</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="absolute inset-0 bg-indigo-950/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+            <a href="#contact" class="flex items-center gap-2 bg-indigo-500 hover:bg-indigo-600 text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow-lg transition">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              En savoir plus
+            </a>
+          </div>
+        </div>
+        <div class="p-5">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="tag-badge tag-blue">Fintech</span>
+            <span class="tag-badge" style="background:rgba(99,102,241,0.1);color:#6366f1;">UEMOA</span>
+            <span class="tag-badge tag-green">Python</span>
+          </div>
+          <h3 class="font-bold text-navy mb-1">OBLEX — SGIOB</h3>
+          <p class="text-gray-500 text-sm">Système de gestion interbancaire des obligations boursières pour la zone UEMOA / BRVM.</p>
+        </div>
+      </div>
+
+    </div>
+
+      <!-- Project 5 — Elzo Sports -->
+      <div class="portfolio-card group reveal-up" style="animation-delay:.5s">
+        <div class="portfolio-img bg-gradient-to-br from-[#052e16] to-[#15803d] overflow-hidden">
+          <div class="w-full h-full flex items-center justify-center p-4">
+            <div class="w-full max-w-[210px] space-y-2">
+
+              <!-- Mobile phone mockup -->
+              <div class="flex items-start gap-3">
+                <!-- Phone frame -->
+                <div class="flex-shrink-0 w-20 bg-[#0a0a0a] rounded-2xl border-2 border-white/20 overflow-hidden shadow-2xl">
+                  <div class="bg-[#0a0a0a] pt-1.5 pb-0.5 flex justify-center">
+                    <div class="w-6 h-1 bg-white/20 rounded-full"></div>
+                  </div>
+                  <!-- App screen -->
+                  <div class="bg-gradient-to-b from-green-900 to-green-950 p-1.5 space-y-1">
+                    <!-- Top bar -->
+                    <div class="flex items-center justify-between">
+                      <span class="text-white font-black text-[7px] tracking-tight">Elzo Sports</span>
+                      <div class="w-3 h-3 rounded-full bg-green-400/30 flex items-center justify-center">
+                        <div class="w-1.5 h-1.5 rounded-full bg-green-400"></div>
+                      </div>
+                    </div>
+                    <!-- Terrain svg top view -->
+                    <div class="bg-green-700 rounded-md p-1 relative overflow-hidden">
+                      <svg viewBox="0 0 60 40" class="w-full h-8">
+                        <!-- Terrain -->
+                        <rect x="0" y="0" width="60" height="40" fill="#15803d" rx="2"/>
+                        <!-- Lines -->
+                        <rect x="2" y="2" width="56" height="36" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="0.8"/>
+                        <line x1="30" y1="2" x2="30" y2="38" stroke="rgba(255,255,255,0.5)" stroke-width="0.8"/>
+                        <circle cx="30" cy="20" r="6" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="0.8"/>
+                        <circle cx="30" cy="20" r="1" fill="white" opacity="0.7"/>
+                        <!-- Goals -->
+                        <rect x="2" y="15" width="4" height="10" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="0.8"/>
+                        <rect x="54" y="15" width="4" height="10" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="0.8"/>
+                      </svg>
+                    </div>
+                    <!-- Slots -->
+                    <div class="space-y-0.5">
+                      <div class="flex items-center justify-between bg-green-600/50 rounded px-1 py-0.5">
+                        <span class="text-white text-[6px]">09:00</span>
+                        <span class="text-green-300 text-[6px] font-bold">Libre</span>
+                      </div>
+                      <div class="flex items-center justify-between bg-red-500/30 rounded px-1 py-0.5">
+                        <span class="text-white text-[6px]">10:00</span>
+                        <span class="text-red-300 text-[6px] font-bold">Réservé</span>
+                      </div>
+                      <div class="flex items-center justify-between bg-green-600/50 rounded px-1 py-0.5">
+                        <span class="text-white text-[6px]">11:00</span>
+                        <span class="text-green-300 text-[6px] font-bold">Libre</span>
+                      </div>
+                    </div>
+                    <!-- CTA button -->
+                    <div class="bg-orange rounded text-center py-0.5">
+                      <span class="text-white text-[6px] font-bold">Réserver</span>
+                    </div>
+                  </div>
+                  <div class="bg-[#0a0a0a] py-1 flex justify-center">
+                    <div class="w-5 h-0.5 bg-white/20 rounded-full"></div>
+                  </div>
+                </div>
+
+                <!-- Right info -->
+                <div class="flex-1 space-y-2 pt-1">
+                  <div>
+                    <div class="text-white font-extrabold text-xs leading-tight">Elzo Sports</div>
+                    <div class="text-green-300 text-[8px] mt-0.5">App mobile · iOS & Android</div>
+                  </div>
+                  <div class="space-y-1.5">
+                    <div class="flex items-center gap-1.5">
+                      <div class="w-4 h-4 rounded-md bg-green-500/20 flex items-center justify-center flex-shrink-0">
+                        <svg class="w-2.5 h-2.5 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                      </div>
+                      <span class="text-white/70 text-[7px]">Réservation en temps réel</span>
+                    </div>
+                    <div class="flex items-center gap-1.5">
+                      <div class="w-4 h-4 rounded-md bg-orange/20 flex items-center justify-center flex-shrink-0">
+                        <svg class="w-2.5 h-2.5 text-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
+                      </div>
+                      <span class="text-white/70 text-[7px]">Paiement Mobile Money</span>
+                    </div>
+                    <div class="flex items-center gap-1.5">
+                      <div class="w-4 h-4 rounded-md bg-blue-400/20 flex items-center justify-center flex-shrink-0">
+                        <svg class="w-2.5 h-2.5 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+                      </div>
+                      <span class="text-white/70 text-[7px]">Rappels & notifications</span>
+                    </div>
+                  </div>
+                  <div class="flex items-center gap-1 bg-white/5 rounded-lg px-2 py-1 border border-white/10">
+                    <span class="text-yellow-400 text-[8px]">★★★★★</span>
+                    <span class="text-white/50 text-[7px]">4.8/5</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hover overlay -->
+          <div class="absolute inset-0 bg-green-950/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+            <a href="#contact" class="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white text-xs font-bold px-4 py-2.5 rounded-xl shadow-lg transition">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              En savoir plus
+            </a>
+          </div>
+        </div>
+        <div class="p-5">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="tag-badge tag-green">Mobile App</span>
+            <span class="tag-badge tag-orange">React Native</span>
+            <span class="tag-badge tag-blue">Sport</span>
+          </div>
+          <h3 class="font-bold text-navy mb-1">Elzo Sports — Réservation terrain</h3>
+          <p class="text-gray-500 text-sm">Application mobile de réservation de terrains de football avec paiement Mobile Money intégré.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="text-center mt-10 reveal-up">
+      <a href="#contact" class="inline-flex items-center gap-2 text-navy font-semibold hover:text-orange transition-colors">
+        Voir tous les projets
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════
+     TÉMOIGNAGES
+════════════════════════════════════════════════ -->
+<section id="temoignages" class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+    <div class="text-center mb-16 reveal-up">
+      <span class="section-badge">Ce qu'ils disent</span>
+      <h2 class="section-title mt-3">Nos <span class="text-orange">clients</span> témoignent</h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+
+      <div class="testi-card reveal-up" style="animation-delay:.1s">
+        <div class="flex gap-1 mb-4">
+          <span class="text-orange">★★★★★</span>
+        </div>
+        <p class="text-gray-600 text-sm leading-relaxed mb-5">"DigitalMatis a développé notre application de gestion en un temps record. Code propre, livraison dans les délais, et un suivi impeccable. Je recommande sans hésiter."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-navy flex items-center justify-center text-white font-bold text-sm">AB</div>
+          <div>
+            <div class="font-semibold text-navy text-sm">Awa Ba</div>
+            <div class="text-gray-400 text-xs">Directrice, AgriTech Sénégal</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal-up" style="animation-delay:.2s">
+        <div class="flex gap-1 mb-4">
+          <span class="text-orange">★★★★★</span>
+        </div>
+        <p class="text-gray-600 text-sm leading-relaxed mb-5">"La formation Python m'a complètement changé la vie professionnelle. Elias explique avec une clarté remarquable. En 2 mois, j'analyse des données que je ne comprenais même pas avant."</p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-orange flex items-center justify-center text-white font-bold text-sm">KD</div>
+          <div>
+            <div class="font-semibold text-navy text-sm">Karim Diallo</div>
+            <div class="text-xs text-gray-400">Étudiant, Matis Academy</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal-up" style="animation-delay:.3s">
+        <div class="flex gap-1 mb-4">
+          <span class="text-orange">★★★★★</span>
+        </div>
+        <p class="text-gray-600 text-sm leading-relaxed mb-5">"Gynaeasy a transformé la gestion de mon cabinet. Plus de fichiers papier, agenda en ligne, rappels automatiques. Mes patients adorent et moi aussi !"</p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-green-500 flex items-center justify-center text-white font-bold text-sm">DS</div>
+          <div>
+            <div class="font-semibold text-navy text-sm">Dr. Salif Kouyaté</div>
+            <div class="text-xs text-gray-400">Médecin généraliste, Dakar</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════
+     CONTACT / CTA
+════════════════════════════════════════════════ -->
+<section id="contact" class="py-24 bg-navy-deeper relative overflow-hidden">
+  <div class="absolute inset-0 bg-grid opacity-10"></div>
+  <div class="absolute -top-32 -right-32 w-96 h-96 bg-orange/15 rounded-full blur-3xl"></div>
+  <div class="absolute -bottom-32 -left-32 w-96 h-96 bg-navy-light/20 rounded-full blur-3xl"></div>
+
+  <div class="relative max-w-5xl mx-auto px-6 lg:px-8">
+    <div class="text-center mb-14 reveal-up">
+      <span class="section-badge-dark">On vous répond sous 24h</span>
+      <h2 class="section-title text-white mt-3">Parlons de votre <span class="text-orange">projet</span></h2>
+      <p class="section-sub text-white/50">Développement, formation ou Gynaeasy — dites-nous ce dont vous avez besoin.</p>
+    </div>
+
+    <div class="grid lg:grid-cols-5 gap-10">
+
+      <!-- Info -->
+      <div class="lg:col-span-2 reveal-left">
+        <div class="space-y-6">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-orange/10 border border-orange/20 flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
+            <div>
+              <div class="text-white font-semibold text-sm">Email</div>
+              <div class="text-white/50 text-sm mt-0.5">ebadji@digitalmatis.com</div>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-orange/10 border border-orange/20 flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            </div>
+            <div>
+              <div class="text-white font-semibold text-sm">Téléphone / WhatsApp</div>
+              <div class="flex items-center gap-3 mt-1">
+                <a href="tel:+221711106868" class="text-white/60 hover:text-orange text-sm transition-colors">+221 71 110 68 68</a>
+                <a href="https://wa.me/221711106868" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 bg-green-500/20 hover:bg-green-500/30 border border-green-500/30 text-green-400 text-xs font-semibold px-2.5 py-1 rounded-full transition-colors">
+                  <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                  WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-orange/10 border border-orange/20 flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-orange" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            </div>
+            <div>
+              <div class="text-white font-semibold text-sm">Localisation</div>
+              <div class="text-white/50 text-sm mt-0.5">Dakar, Sénégal</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social Links -->
+        <div class="mt-8">
+          <div class="text-white/50 text-sm mb-3">Suivez-nous</div>
+          <div class="flex gap-3">
+            <a href="#" class="w-9 h-9 rounded-xl bg-white/5 hover:bg-orange/20 border border-white/10 hover:border-orange/30 flex items-center justify-center text-white/50 hover:text-orange transition-all">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="#" class="w-9 h-9 rounded-xl bg-white/5 hover:bg-orange/20 border border-white/10 hover:border-orange/30 flex items-center justify-center text-white/50 hover:text-orange transition-all">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="#" class="w-9 h-9 rounded-xl bg-white/5 hover:bg-orange/20 border border-white/10 hover:border-orange/30 flex items-center justify-center text-white/50 hover:text-orange transition-all">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="lg:col-span-3 reveal-right">
+        <form id="contact-form" class="bg-navy border border-white/10 rounded-2xl p-8 space-y-5">
+          <div class="grid md:grid-cols-2 gap-5">
+            <div>
+              <label class="form-label">Nom complet</label>
+              <input type="text" name="from_name" placeholder="Votre nom" class="form-input" required />
+            </div>
+            <div>
+              <label class="form-label">Email</label>
+              <input type="email" name="reply_to" placeholder="vous@exemple.com" class="form-input" required />
+            </div>
+          </div>
+          <div>
+            <label class="form-label">Service souhaité</label>
+            <select name="service" class="form-input">
+              <option value="">Sélectionner un service</option>
+              <option>Développement logiciel</option>
+              <option>Formation Python & Data</option>
+              <option>Gynaeasy — Démo gratuite</option>
+              <option>Autre</option>
+            </select>
+          </div>
+          <div>
+            <label class="form-label">Message</label>
+            <textarea rows="4" name="message" placeholder="Décrivez votre projet ou vos besoins..." class="form-input resize-none" required></textarea>
+          </div>
+          <button type="submit" class="w-full py-3.5 bg-orange hover:bg-orange-dark text-white font-semibold rounded-xl transition-all hover:-translate-y-0.5 shadow-lg shadow-orange/25 hover:shadow-orange/40">
+            Envoyer le message 🚀
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════ -->
+<footer class="bg-navy-deeper border-t border-white/5 pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+
+      <!-- Brand -->
+      <div class="lg:col-span-2">
+        <div class="logo-wrapper inline-block mb-4">
+        <img src="assets/images/logo.png" alt="DigitalMatis" class="h-12 w-auto" />
+      </div>
+        <p class="text-white/50 text-sm leading-relaxed max-w-xs">
+          Le digital au service de vos ambitions. Développement logiciel, formations Python & Data, et SaaS médical depuis Dakar.
+        </p>
+      </div>
+
+      <!-- Services -->
+      <div>
+        <h4 class="text-white font-semibold text-sm mb-4">Services</h4>
+        <ul class="space-y-2.5 text-sm text-white/40">
+          <li><a href="#services" class="hover:text-orange transition-colors">Développement logiciel</a></li>
+          <li><a href="#academy" class="hover:text-orange transition-colors">Matis Academy</a></li>
+          <li><a href="#saas" class="hover:text-orange transition-colors">Gynaeasy</a></li>
+          <li><a href="#portfolio" class="hover:text-orange transition-colors">Portfolio</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h4 class="text-white font-semibold text-sm mb-4">Contact</h4>
+        <ul class="space-y-2.5 text-sm text-white/40">
+          <li><a href="mailto:ebadji@digitalmatis.com" class="hover:text-orange transition-colors">ebadji@digitalmatis.com</a></li>
+          <li><a href="tel:+221711106868" class="hover:text-orange transition-colors">+221 71 110 68 68</a></li>
+          <li>Dakar, Sénégal</li>
+          <li><a href="#contact" class="hover:text-orange transition-colors">Formulaire de contact</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-white/30 text-sm">© 2026 DigitalMatis Sarl. Tous droits réservés.</p>
+      <p class="text-white/20 text-xs">Fait avec ❤️ à Dakar, Sénégal</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Scripts -->
+<script src="js/main.js"></script>
+
+</body>
+</html>
