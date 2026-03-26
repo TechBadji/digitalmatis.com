@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Python Fondamental — Matis Academy · DigitalMatis</title>
+  <meta name="description" content="Programme complet de la formation Python Fondamental — 6 semaines, niveau débutant. Matis Academy by DigitalMatis." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy:   { DEFAULT: '#1A3471', light: '#2A4A9A', dark: '#0F1F4A', deeper: '#0A1228' },
+            orange: { DEFAULT: '#F47920', light: '#FF9A45', dark: '#D4640F' },
+          },
+          fontFamily: { sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'] },
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .week-card { transition: all 0.3s ease; }
+    .week-card:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(26,52,113,0.1); }
+    .week-number { width: 2.5rem; height: 2.5rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.875rem; flex-shrink: 0; }
+    .topic-item { display: flex; align-items: flex-start; gap: 0.625rem; padding: 0.5rem 0; border-bottom: 1px solid #F1F5F9; }
+    .topic-item:last-child { border-bottom: none; }
+  </style>
+</head>
+<body class="font-sans bg-gray-50 text-gray-800 antialiased">
+
+<!-- Navbar -->
+<header class="bg-navy-deeper shadow-lg sticky top-0 z-50">
+  <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2 text-white/70 hover:text-white transition-colors text-sm font-semibold">
+      <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+      Retour au site
+    </a>
+    <div class="logo-wrapper">
+      <img src="assets/images/logo.png" alt="DigitalMatis" class="h-9 w-auto" />
+    </div>
+    <a href="index.html#contact" class="px-4 py-2 bg-orange hover:bg-orange-dark text-white text-sm font-bold rounded-xl transition-all">S'inscrire</a>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="bg-gradient-to-br from-[#306998] to-[#1A3471] py-16 px-6">
+  <div class="max-w-5xl mx-auto">
+    <div class="flex items-center gap-3 mb-4">
+      <a href="index.html#academy" class="text-white/60 hover:text-white text-sm transition-colors">Matis Academy</a>
+      <span class="text-white/30">›</span>
+      <span class="text-white/80 text-sm">Python Fondamental</span>
+    </div>
+    <div class="flex flex-wrap items-start justify-between gap-6">
+      <div>
+        <div class="flex items-center gap-3 mb-3">
+          <span class="bg-orange/20 border border-orange/40 text-orange text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Débutant</span>
+          <span class="bg-white/10 text-white/70 text-xs font-semibold px-3 py-1 rounded-full">6 semaines</span>
+          <span class="bg-white/10 text-white/70 text-xs font-semibold px-3 py-1 rounded-full">🐍 Python</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-white mb-3">Python Fondamental</h1>
+        <p class="text-white/70 text-lg max-w-xl">Maîtrisez les bases de Python pas à pas. De l'installation à la programmation orientée objet, en 6 semaines intensives.</p>
+      </div>
+      <div class="bg-white/10 border border-white/20 rounded-2xl px-8 py-6 text-center backdrop-blur-sm">
+        <div class="text-white/50 text-sm mb-1">Prix de la formation</div>
+        <div class="text-4xl font-extrabold text-white">49 000</div>
+        <div class="text-white/60 text-sm mt-1">FCFA</div>
+        <a href="index.html#contact" class="mt-4 block px-6 py-2.5 bg-orange hover:bg-orange-dark text-white font-bold rounded-xl transition-all text-sm">S'inscrire maintenant</a>
+      </div>
+    </div>
+
+    <!-- Infos clés -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-10">
+      <div class="bg-white/10 rounded-xl px-4 py-3 text-center border border-white/10">
+        <div class="text-2xl font-extrabold text-white">6</div>
+        <div class="text-white/50 text-xs mt-0.5">Semaines</div>
+      </div>
+      <div class="bg-white/10 rounded-xl px-4 py-3 text-center border border-white/10">
+        <div class="text-2xl font-extrabold text-white">30h</div>
+        <div class="text-white/50 text-xs mt-0.5">De contenu</div>
+      </div>
+      <div class="bg-white/10 rounded-xl px-4 py-3 text-center border border-white/10">
+        <div class="text-2xl font-extrabold text-white">1</div>
+        <div class="text-white/50 text-xs mt-0.5">Projet final</div>
+      </div>
+      <div class="bg-white/10 rounded-xl px-4 py-3 text-center border border-white/10">
+        <div class="text-2xl font-extrabold text-white">✓</div>
+        <div class="text-white/50 text-xs mt-0.5">Certificat</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Programme -->
+<section class="py-16 px-6">
+  <div class="max-w-5xl mx-auto">
+
+    <h2 class="text-2xl font-extrabold text-navy mb-2">Programme semaine par semaine</h2>
+    <p class="text-gray-500 mb-10">Chaque semaine combine cours théoriques, exercices pratiques et mini-projets.</p>
+
+    <div class="space-y-5">
+
+      <!-- Semaine 1 -->
+      <div class="week-card bg-white rounded-2xl border border-gray-100 overflow-hidden">
+        <div class="flex items-center gap-4 p-5 border-b border-gray-50">
+          <div class="week-number bg-[#306998]/10 text-[#306998]">S1</div>
+          <div>
+            <div class="font-extrabold text-navy text-lg">Découverte de Python</div>
+            <div class="text-gray-400 text-sm">Installation, environnement, premiers pas</div>
+          </div>
+          <span class="ml-auto text-xs text-gray-400 bg-gray-50 px-3 py-1 rounded-full border">5h</span>
+        </div>
+        <div class="p-5">
+          <div class="grid sm:grid-cols-2 gap-x-8">
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-[#306998] mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Installation Python & VS Code / Jupyter Notebook</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-[#306998] mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Variables et types de données (int, float, str, bool)</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-[#306998] mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Opérations arithmétiques et logiques</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-[#306998] mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Entrées/sorties : input() et print()</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-[#306998] mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Manipulation de chaînes de caractères</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-[#306998] mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">🛠 Mini-projet : calculatrice simple</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Semaine 2 -->
+      <div class="week-card bg-white rounded-2xl border border-gray-100 overflow-hidden">
+        <div class="flex items-center gap-4 p-5 border-b border-gray-50">
+          <div class="week-number bg-orange/10 text-orange">S2</div>
+          <div>
+            <div class="font-extrabold text-navy text-lg">Structures de contrôle</div>
+            <div class="text-gray-400 text-sm">Conditions, boucles, logique de programme</div>
+          </div>
+          <span class="ml-auto text-xs text-gray-400 bg-gray-50 px-3 py-1 rounded-full border">5h</span>
+        </div>
+        <div class="p-5">
+          <div class="grid sm:grid-cols-2 gap-x-8">
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-orange mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Conditions : if, elif, else</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-orange mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Boucles for et while</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-orange mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Break, continue et pass</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-orange mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Opérateurs de comparaison et logiques</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-orange mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Imbrication de boucles et conditions</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-orange mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">🛠 Mini-projet : jeu de devinette</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Semaine 3 -->
+      <div class="week-card bg-white rounded-2xl border border-gray-100 overflow-hidden">
+        <div class="flex items-center gap-4 p-5 border-b border-gray-50">
+          <div class="week-number bg-green-500/10 text-green-600">S3</div>
+          <div>
+            <div class="font-extrabold text-navy text-lg">Fonctions & Modules</div>
+            <div class="text-gray-400 text-sm">Structurer et réutiliser son code</div>
+          </div>
+          <span class="ml-auto text-xs text-gray-400 bg-gray-50 px-3 py-1 rounded-full border">5h</span>
+        </div>
+        <div class="p-5">
+          <div class="grid sm:grid-cols-2 gap-x-8">
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-green-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Définir et appeler une fonction (def)</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-green-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Paramètres, arguments et valeurs de retour</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-green-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Portée des variables (scope) : local & global</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-green-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Fonctions lambda et fonctions imbriquées</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-green-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Import de modules (math, random, datetime)</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-green-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">🛠 Mini-projet : convertisseur de devises FCFA</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Semaine 4 -->
+      <div class="week-card bg-white rounded-2xl border border-gray-100 overflow-hidden">
+        <div class="flex items-center gap-4 p-5 border-b border-gray-50">
+          <div class="week-number bg-purple-500/10 text-purple-600">S4</div>
+          <div>
+            <div class="font-extrabold text-navy text-lg">Structures de données</div>
+            <div class="text-gray-400 text-sm">Listes, tuples, dictionnaires, ensembles</div>
+          </div>
+          <span class="ml-auto text-xs text-gray-400 bg-gray-50 px-3 py-1 rounded-full border">5h</span>
+        </div>
+        <div class="p-5">
+          <div class="grid sm:grid-cols-2 gap-x-8">
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-purple-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Listes : création, indexation, slicing, méthodes</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-purple-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Tuples et immutabilité</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-purple-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Dictionnaires : clés, valeurs, manipulation</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-purple-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Ensembles (sets) et opérations</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-purple-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">List comprehensions et dict comprehensions</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-purple-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">🛠 Mini-projet : gestion d'une liste d'étudiants</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Semaine 5 -->
+      <div class="week-card bg-white rounded-2xl border border-gray-100 overflow-hidden">
+        <div class="flex items-center gap-4 p-5 border-b border-gray-50">
+          <div class="week-number bg-navy/10 text-navy">S5</div>
+          <div>
+            <div class="font-extrabold text-navy text-lg">Programmation Orientée Objet</div>
+            <div class="text-gray-400 text-sm">Classes, objets, héritage</div>
+          </div>
+          <span class="ml-auto text-xs text-gray-400 bg-gray-50 px-3 py-1 rounded-full border">5h</span>
+        </div>
+        <div class="p-5">
+          <div class="grid sm:grid-cols-2 gap-x-8">
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-navy mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Classes et instances (class, __init__, self)</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-navy mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Attributs et méthodes d'instance</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-navy mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Héritage et polymorphisme</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-navy mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Méthodes spéciales (__str__, __repr__)</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-navy mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Encapsulation et propriétés (@property)</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-navy mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">🛠 Mini-projet : système de gestion de comptes</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Semaine 6 -->
+      <div class="week-card bg-white rounded-2xl border border-[#FFD43B]/40 overflow-hidden">
+        <div class="flex items-center gap-4 p-5 border-b border-[#FFD43B]/20 bg-[#FFD43B]/5">
+          <div class="week-number bg-[#FFD43B]/20 text-[#B8860B]">S6</div>
+          <div>
+            <div class="font-extrabold text-navy text-lg">Projet Final & Certification</div>
+            <div class="text-gray-400 text-sm">Fichiers, gestion d'erreurs, projet complet</div>
+          </div>
+          <span class="ml-auto text-xs font-bold text-[#B8860B] bg-[#FFD43B]/20 px-3 py-1 rounded-full border border-[#FFD43B]/40">Certification</span>
+        </div>
+        <div class="p-5">
+          <div class="grid sm:grid-cols-2 gap-x-8">
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-[#B8860B] mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Lecture et écriture de fichiers (txt, csv, json)</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-[#B8860B] mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Gestion des erreurs : try, except, finally</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-[#B8860B] mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Création d'exceptions personnalisées</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-[#B8860B] mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Bonnes pratiques : PEP 8, documentation</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-[#B8860B] mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Révision générale et Q&A</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-[#B8860B] mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">🏆 Projet final : application de gestion personnelle</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Prérequis & objectifs -->
+    <div class="grid md:grid-cols-2 gap-6 mt-12">
+      <div class="bg-white rounded-2xl border border-gray-100 p-6">
+        <h3 class="font-extrabold text-navy mb-4 flex items-center gap-2">
+          <span class="w-8 h-8 rounded-lg bg-navy/10 flex items-center justify-center text-navy">✓</span>
+          Prérequis
+        </h3>
+        <ul class="space-y-2 text-sm text-gray-600">
+          <li class="flex items-center gap-2"><span class="text-green-500">✓</span>Aucune expérience en programmation requise</li>
+          <li class="flex items-center gap-2"><span class="text-green-500">✓</span>Un ordinateur (Windows, Mac ou Linux)</li>
+          <li class="flex items-center gap-2"><span class="text-green-500">✓</span>Connexion internet</li>
+          <li class="flex items-center gap-2"><span class="text-green-500">✓</span>Motivation et régularité (5h/semaine)</li>
+        </ul>
+      </div>
+      <div class="bg-white rounded-2xl border border-gray-100 p-6">
+        <h3 class="font-extrabold text-navy mb-4 flex items-center gap-2">
+          <span class="w-8 h-8 rounded-lg bg-orange/10 flex items-center justify-center text-orange">🎯</span>
+          Objectifs à l'issue de la formation
+        </h3>
+        <ul class="space-y-2 text-sm text-gray-600">
+          <li class="flex items-center gap-2"><span class="text-orange">→</span>Écrire des programmes Python fonctionnels</li>
+          <li class="flex items-center gap-2"><span class="text-orange">→</span>Maîtriser les structures de données Python</li>
+          <li class="flex items-center gap-2"><span class="text-orange">→</span>Créer des classes et objets en POO</li>
+          <li class="flex items-center gap-2"><span class="text-orange">→</span>Être prêt pour la formation Data Science</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-12 bg-gradient-to-br from-navy to-navy-light rounded-2xl p-8 text-center">
+      <h3 class="text-2xl font-extrabold text-white mb-2">Prêt à commencer ?</h3>
+      <p class="text-white/60 mb-6">Prochaine session disponible — places limitées à 15 apprenants.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="index.html#contact" class="px-8 py-3.5 bg-orange hover:bg-orange-dark text-white font-bold rounded-xl transition-all hover:-translate-y-0.5 shadow-lg shadow-orange/30">
+          S'inscrire — 49 000 FCFA
+        </a>
+        <a href="index.html#contact" class="px-8 py-3.5 border border-white/20 text-white hover:border-orange hover:text-orange font-semibold rounded-xl transition-all">
+          Poser une question
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Footer minimal -->
+<footer class="bg-navy-deeper py-6 text-center text-white/30 text-sm">
+  © 2026 DigitalMatis Sarl · <a href="index.html" class="hover:text-orange transition-colors">Retour au site</a>
+</footer>
+
+</body>
+</html>

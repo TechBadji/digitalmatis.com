@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data Science & Analyse — Matis Academy · DigitalMatis</title>
+  <meta name="description" content="Programme complet de la formation Data Science & Analyse — 8 semaines, niveau intermédiaire. Matis Academy by DigitalMatis." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy:   { DEFAULT: '#1A3471', light: '#2A4A9A', dark: '#0F1F4A', deeper: '#0A1228' },
+            orange: { DEFAULT: '#F47920', light: '#FF9A45', dark: '#D4640F' },
+          },
+          fontFamily: { sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'] },
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .week-card { transition: all 0.3s ease; }
+    .week-card:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(26,52,113,0.1); }
+    .week-number { width: 2.5rem; height: 2.5rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.875rem; flex-shrink: 0; }
+    .topic-item { display: flex; align-items: flex-start; gap: 0.625rem; padding: 0.5rem 0; border-bottom: 1px solid #F1F5F9; }
+    .topic-item:last-child { border-bottom: none; }
+  </style>
+</head>
+<body class="font-sans bg-gray-50 text-gray-800 antialiased">
+
+<!-- Navbar -->
+<header class="bg-navy-deeper shadow-lg sticky top-0 z-50">
+  <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2 text-white/70 hover:text-white transition-colors text-sm font-semibold">
+      <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+      Retour au site
+    </a>
+    <div class="logo-wrapper">
+      <img src="assets/images/logo.png" alt="DigitalMatis" class="h-9 w-auto" />
+    </div>
+    <a href="index.html#contact" class="px-4 py-2 bg-orange hover:bg-orange-dark text-white text-sm font-bold rounded-xl transition-all">S'inscrire</a>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="bg-gradient-to-br from-[#0369A1] to-[#1A3471] py-16 px-6">
+  <div class="max-w-5xl mx-auto">
+    <div class="flex items-center gap-3 mb-4">
+      <a href="index.html#academy" class="text-white/60 hover:text-white text-sm transition-colors">Matis Academy</a>
+      <span class="text-white/30">›</span>
+      <span class="text-white/80 text-sm">Data Science & Analyse</span>
+    </div>
+    <div class="flex flex-wrap items-start justify-between gap-6">
+      <div>
+        <div class="flex items-center gap-3 mb-3">
+          <span class="bg-orange/20 border border-orange/40 text-orange text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Intermédiaire</span>
+          <span class="bg-white/10 text-white/70 text-xs font-semibold px-3 py-1 rounded-full">8 semaines</span>
+          <span class="bg-white/10 text-white/70 text-xs font-semibold px-3 py-1 rounded-full">📊 Data</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-white mb-3">Data Science & Analyse</h1>
+        <p class="text-white/70 text-lg max-w-xl">Transformez des données brutes en insights actionnables. Maîtrisez NumPy, Pandas, la visualisation et les statistiques en 8 semaines.</p>
+      </div>
+      <div class="bg-white/10 border border-white/20 rounded-2xl px-8 py-6 text-center backdrop-blur-sm">
+        <div class="text-white/50 text-sm mb-1">Prix de la formation</div>
+        <div class="text-4xl font-extrabold text-white">79 000</div>
+        <div class="text-white/60 text-sm mt-1">FCFA</div>
+        <a href="index.html#contact" class="mt-4 block px-6 py-2.5 bg-orange hover:bg-orange-dark text-white font-bold rounded-xl transition-all text-sm">S'inscrire maintenant</a>
+      </div>
+    </div>
+
+    <!-- Infos clés -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-10">
+      <div class="bg-white/10 rounded-xl px-4 py-3 text-center border border-white/10">
+        <div class="text-2xl font-extrabold text-white">8</div>
+        <div class="text-white/50 text-xs mt-0.5">Semaines</div>
+      </div>
+      <div class="bg-white/10 rounded-xl px-4 py-3 text-center border border-white/10">
+        <div class="text-2xl font-extrabold text-white">40h</div>
+        <div class="text-white/50 text-xs mt-0.5">De contenu</div>
+      </div>
+      <div class="bg-white/10 rounded-xl px-4 py-3 text-center border border-white/10">
+        <div class="text-2xl font-extrabold text-white">2</div>
+        <div class="text-white/50 text-xs mt-0.5">Projets pratiques</div>
+      </div>
+      <div class="bg-white/10 rounded-xl px-4 py-3 text-center border border-white/10">
+        <div class="text-2xl font-extrabold text-white">✓</div>
+        <div class="text-white/50 text-xs mt-0.5">Certificat</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Programme -->
+<section class="py-16 px-6">
+  <div class="max-w-5xl mx-auto">
+
+    <h2 class="text-2xl font-extrabold text-navy mb-2">Programme semaine par semaine</h2>
+    <p class="text-gray-500 mb-10">Chaque semaine combine cours théoriques, Jupyter Notebooks interactifs et exercices sur des datasets réels.</p>
+
+    <div class="space-y-5">
+
+      <!-- Semaine 1 -->
+      <div class="week-card bg-white rounded-2xl border border-gray-100 overflow-hidden">
+        <div class="flex items-center gap-4 p-5 border-b border-gray-50">
+          <div class="week-number bg-[#0369A1]/10 text-[#0369A1]">S1</div>
+          <div>
+            <div class="font-extrabold text-navy text-lg">Introduction à la Data Science</div>
+            <div class="text-gray-400 text-sm">Écosystème Python pour la data, Jupyter, NumPy bases</div>
+          </div>
+          <span class="ml-auto text-xs text-gray-400 bg-gray-50 px-3 py-1 rounded-full border">5h</span>
+        </div>
+        <div class="p-5">
+          <div class="grid sm:grid-cols-2 gap-x-8">
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-[#0369A1] mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Le cycle de vie d'un projet data (CRISP-DM)</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-[#0369A1] mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Configuration de l'environnement Jupyter / Google Colab</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-[#0369A1] mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">NumPy : arrays, opérations vectorielles, broadcasting</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-[#0369A1] mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Indexation, slicing et reshaping d'arrays</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-[#0369A1] mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Fonctions mathématiques et aléatoires NumPy</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-[#0369A1] mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">🛠 Exercice : analyse d'un tableau de ventes</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Semaine 2 -->
+      <div class="week-card bg-white rounded-2xl border border-gray-100 overflow-hidden">
+        <div class="flex items-center gap-4 p-5 border-b border-gray-50">
+          <div class="week-number bg-orange/10 text-orange">S2</div>
+          <div>
+            <div class="font-extrabold text-navy text-lg">Pandas — Manipulation de données</div>
+            <div class="text-gray-400 text-sm">Series, DataFrames, import/export de données</div>
+          </div>
+          <span class="ml-auto text-xs text-gray-400 bg-gray-50 px-3 py-1 rounded-full border">5h</span>
+        </div>
+        <div class="p-5">
+          <div class="grid sm:grid-cols-2 gap-x-8">
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-orange mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Series et DataFrames : création et structure</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-orange mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Lecture de fichiers CSV, Excel, JSON</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-orange mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Sélection : .loc, .iloc, conditions booléennes</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-orange mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Tri, filtrage et manipulation de colonnes</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-orange mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Opérations sur les DataFrames (merge, concat, join)</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-orange mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">🛠 Mini-projet : analyse des exportations UEMOA</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Semaine 3 -->
+      <div class="week-card bg-white rounded-2xl border border-gray-100 overflow-hidden">
+        <div class="flex items-center gap-4 p-5 border-b border-gray-50">
+          <div class="week-number bg-green-500/10 text-green-600">S3</div>
+          <div>
+            <div class="font-extrabold text-navy text-lg">Nettoyage & Préparation des données</div>
+            <div class="text-gray-400 text-sm">Valeurs manquantes, doublons, outliers, encodage</div>
+          </div>
+          <span class="ml-auto text-xs text-gray-400 bg-gray-50 px-3 py-1 rounded-full border">5h</span>
+        </div>
+        <div class="p-5">
+          <div class="grid sm:grid-cols-2 gap-x-8">
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-green-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Détection et traitement des valeurs manquantes</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-green-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Suppression et imputation de données (mean, median, ffill)</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-green-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Détection des doublons et valeurs aberrantes (outliers)</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-green-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Transformation et encodage des variables catégorielles</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-green-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Normalisation et standardisation des données</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-green-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">🛠 Mini-projet : nettoyage d'un dataset immobilier</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Semaine 4 -->
+      <div class="week-card bg-white rounded-2xl border border-gray-100 overflow-hidden">
+        <div class="flex items-center gap-4 p-5 border-b border-gray-50">
+          <div class="week-number bg-purple-500/10 text-purple-600">S4</div>
+          <div>
+            <div class="font-extrabold text-navy text-lg">Visualisation de données</div>
+            <div class="text-gray-400 text-sm">Matplotlib, Seaborn, graphiques professionnels</div>
+          </div>
+          <span class="ml-auto text-xs text-gray-400 bg-gray-50 px-3 py-1 rounded-full border">5h</span>
+        </div>
+        <div class="p-5">
+          <div class="grid sm:grid-cols-2 gap-x-8">
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-purple-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Matplotlib : subplots, axes, styles, annotations</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-purple-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Graphiques Seaborn : heatmap, pairplot, boxplot</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-purple-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Histogrammes, scatter plots, graphiques temporels</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-purple-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Visualisation interactive avec Plotly</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-purple-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Principes de data storytelling</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-purple-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">🛠 Mini-projet : dashboard de ventes en Python</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Semaine 5 -->
+      <div class="week-card bg-white rounded-2xl border border-gray-100 overflow-hidden">
+        <div class="flex items-center gap-4 p-5 border-b border-gray-50">
+          <div class="week-number bg-teal-500/10 text-teal-600">S5</div>
+          <div>
+            <div class="font-extrabold text-navy text-lg">Statistiques descriptives & inférentielles</div>
+            <div class="text-gray-400 text-sm">Mesures, distributions, tests statistiques</div>
+          </div>
+          <span class="ml-auto text-xs text-gray-400 bg-gray-50 px-3 py-1 rounded-full border">5h</span>
+        </div>
+        <div class="p-5">
+          <div class="grid sm:grid-cols-2 gap-x-8">
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-teal-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Mesures de tendance centrale (moyenne, médiane, mode)</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-teal-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Dispersion : variance, écart-type, IQR</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-teal-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Distributions : normale, binomiale, Poisson</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-teal-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Corrélation (Pearson, Spearman) et causalité</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-teal-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Tests d'hypothèse : t-test, chi-², p-value</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-teal-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">🛠 Analyse : corrélation prix / performance UEMOA</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Semaine 6 -->
+      <div class="week-card bg-white rounded-2xl border border-gray-100 overflow-hidden">
+        <div class="flex items-center gap-4 p-5 border-b border-gray-50">
+          <div class="week-number bg-navy/10 text-navy">S6</div>
+          <div>
+            <div class="font-extrabold text-navy text-lg">SQL pour la Data Science</div>
+            <div class="text-gray-400 text-sm">Requêtes avancées, agrégation, jointures, intégration Pandas</div>
+          </div>
+          <span class="ml-auto text-xs text-gray-400 bg-gray-50 px-3 py-1 rounded-full border">5h</span>
+        </div>
+        <div class="p-5">
+          <div class="grid sm:grid-cols-2 gap-x-8">
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-navy mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Rappels SQL : SELECT, WHERE, ORDER BY, GROUP BY</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-navy mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Jointures : INNER, LEFT, RIGHT, FULL</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-navy mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Sous-requêtes et CTEs (WITH)</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-navy mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Fonctions fenêtres (window functions)</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-navy mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Connexion SQL↔Pandas avec SQLAlchemy</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-navy mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">🛠 Mini-projet : reporting SQL d'une base de transactions</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Semaine 7 -->
+      <div class="week-card bg-white rounded-2xl border border-gray-100 overflow-hidden">
+        <div class="flex items-center gap-4 p-5 border-b border-gray-50">
+          <div class="week-number bg-rose-500/10 text-rose-600">S7</div>
+          <div>
+            <div class="font-extrabold text-navy text-lg">Analyse Exploratoire (EDA) & Projet Intermédiaire</div>
+            <div class="text-gray-400 text-sm">Analyse end-to-end sur un dataset métier</div>
+          </div>
+          <span class="ml-auto text-xs text-gray-400 bg-gray-50 px-3 py-1 rounded-full border">5h</span>
+        </div>
+        <div class="p-5">
+          <div class="grid sm:grid-cols-2 gap-x-8">
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-rose-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Méthodologie EDA : questions, hypothèses, exploration</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-rose-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Profiling automatique avec ydata-profiling</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-rose-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Analyse des séries temporelles</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-rose-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Segmentation et groupby avancé avec Pandas</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-rose-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Rédaction d'un rapport d'analyse structuré</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-rose-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">🏗 Projet intermédiaire : analyse marché mobile en Afrique</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Semaine 8 — Certification -->
+      <div class="week-card bg-white rounded-2xl border border-[#FFD43B]/40 overflow-hidden">
+        <div class="flex items-center gap-4 p-5 border-b border-[#FFD43B]/20 bg-[#FFD43B]/5">
+          <div class="week-number bg-[#FFD43B]/20 text-[#B8860B]">S8</div>
+          <div>
+            <div class="font-extrabold text-navy text-lg">Projet Final & Certification</div>
+            <div class="text-gray-400 text-sm">Pipeline data complet, présentation & certification</div>
+          </div>
+          <span class="ml-auto text-xs font-bold text-[#B8860B] bg-[#FFD43B]/20 px-3 py-1 rounded-full border border-[#FFD43B]/40">Certification</span>
+        </div>
+        <div class="p-5">
+          <div class="grid sm:grid-cols-2 gap-x-8">
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-[#B8860B] mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Choix et cadrage du projet final (dataset réel)</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-[#B8860B] mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Pipeline end-to-end : import → nettoyage → analyse → viz</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-[#B8860B] mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Publication Notebook sur GitHub</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-[#B8860B] mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Présentation des résultats (soutenance)</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-[#B8860B] mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Révision générale et Q&A</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-[#B8860B] mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">🏆 Remise du certificat Data Science DigitalMatis</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Prérequis & objectifs -->
+    <div class="grid md:grid-cols-2 gap-6 mt-12">
+      <div class="bg-white rounded-2xl border border-gray-100 p-6">
+        <h3 class="font-extrabold text-navy mb-4 flex items-center gap-2">
+          <span class="w-8 h-8 rounded-lg bg-navy/10 flex items-center justify-center text-navy">✓</span>
+          Prérequis
+        </h3>
+        <ul class="space-y-2 text-sm text-gray-600">
+          <li class="flex items-center gap-2"><span class="text-green-500">✓</span>Avoir suivi Python Fondamental ou niveau équivalent</li>
+          <li class="flex items-center gap-2"><span class="text-green-500">✓</span>Maîtriser les bases Python (variables, boucles, fonctions)</li>
+          <li class="flex items-center gap-2"><span class="text-green-500">✓</span>Un ordinateur avec Python 3.8+ et Jupyter installés</li>
+          <li class="flex items-center gap-2"><span class="text-green-500">✓</span>Curiosité pour les chiffres et les données</li>
+        </ul>
+      </div>
+      <div class="bg-white rounded-2xl border border-gray-100 p-6">
+        <h3 class="font-extrabold text-navy mb-4 flex items-center gap-2">
+          <span class="w-8 h-8 rounded-lg bg-orange/10 flex items-center justify-center text-orange">🎯</span>
+          Objectifs à l'issue de la formation
+        </h3>
+        <ul class="space-y-2 text-sm text-gray-600">
+          <li class="flex items-center gap-2"><span class="text-orange">→</span>Manipuler de grands datasets avec Pandas & NumPy</li>
+          <li class="flex items-center gap-2"><span class="text-orange">→</span>Produire des visualisations claires et impactantes</li>
+          <li class="flex items-center gap-2"><span class="text-orange">→</span>Conduire une analyse statistique rigoureuse</li>
+          <li class="flex items-center gap-2"><span class="text-orange">→</span>Être prêt pour la formation Machine Learning</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-12 bg-gradient-to-br from-navy to-navy-light rounded-2xl p-8 text-center">
+      <h3 class="text-2xl font-extrabold text-white mb-2">Prêt à maîtriser la data ?</h3>
+      <p class="text-white/60 mb-6">Prochaine session disponible — places limitées à 12 apprenants.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="index.html#contact" class="px-8 py-3.5 bg-orange hover:bg-orange-dark text-white font-bold rounded-xl transition-all hover:-translate-y-0.5 shadow-lg shadow-orange/30">
+          S'inscrire — 79 000 FCFA
+        </a>
+        <a href="index.html#contact" class="px-8 py-3.5 border border-white/20 text-white hover:border-orange hover:text-orange font-semibold rounded-xl transition-all">
+          Poser une question
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Footer minimal -->
+<footer class="bg-navy-deeper py-6 text-center text-white/30 text-sm">
+  © 2026 DigitalMatis Sarl · <a href="index.html" class="hover:text-orange transition-colors">Retour au site</a>
+</footer>
+
+</body>
+</html>

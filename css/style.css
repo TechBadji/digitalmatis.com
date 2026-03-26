@@ -242,6 +242,27 @@ body {
   transition: color 0.2s;
 }
 
+/* ─── Programme button (Academy cards) ──────── */
+.programme-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.625rem 1rem;
+  border: 1.5px dashed #CBD5E1;
+  border-radius: 0.75rem;
+  color: #1A3471;
+  font-size: 0.8rem;
+  font-weight: 700;
+  transition: all 0.2s ease;
+  background: transparent;
+}
+.programme-btn:hover {
+  border-color: #F47920;
+  color: #F47920;
+  background: rgba(244,121,32,0.04);
+}
+
 /* ─── Value Cards (section À propos) ────────── */
 .value-card {
   display: flex;

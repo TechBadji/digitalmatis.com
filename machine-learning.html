@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Machine Learning — Matis Academy · DigitalMatis</title>
+  <meta name="description" content="Programme complet de la formation Machine Learning — 10 semaines, niveau avancé. Matis Academy by DigitalMatis." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy:   { DEFAULT: '#1A3471', light: '#2A4A9A', dark: '#0F1F4A', deeper: '#0A1228' },
+            orange: { DEFAULT: '#F47920', light: '#FF9A45', dark: '#D4640F' },
+          },
+          fontFamily: { sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'] },
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .week-card { transition: all 0.3s ease; }
+    .week-card:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(26,52,113,0.1); }
+    .week-number { width: 2.5rem; height: 2.5rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.875rem; flex-shrink: 0; }
+    .topic-item { display: flex; align-items: flex-start; gap: 0.625rem; padding: 0.5rem 0; border-bottom: 1px solid #F1F5F9; }
+    .topic-item:last-child { border-bottom: none; }
+  </style>
+</head>
+<body class="font-sans bg-gray-50 text-gray-800 antialiased">
+
+<!-- Navbar -->
+<header class="bg-navy-deeper shadow-lg sticky top-0 z-50">
+  <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2 text-white/70 hover:text-white transition-colors text-sm font-semibold">
+      <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+      Retour au site
+    </a>
+    <div class="logo-wrapper">
+      <img src="assets/images/logo.png" alt="DigitalMatis" class="h-9 w-auto" />
+    </div>
+    <a href="index.html#contact" class="px-4 py-2 bg-orange hover:bg-orange-dark text-white text-sm font-bold rounded-xl transition-all">S'inscrire</a>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="bg-gradient-to-br from-[#6D28D9] to-[#1A3471] py-16 px-6">
+  <div class="max-w-5xl mx-auto">
+    <div class="flex items-center gap-3 mb-4">
+      <a href="index.html#academy" class="text-white/60 hover:text-white text-sm transition-colors">Matis Academy</a>
+      <span class="text-white/30">›</span>
+      <span class="text-white/80 text-sm">Machine Learning</span>
+    </div>
+    <div class="flex flex-wrap items-start justify-between gap-6">
+      <div>
+        <div class="flex items-center gap-3 mb-3">
+          <span class="bg-orange/20 border border-orange/40 text-orange text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Avancé</span>
+          <span class="bg-white/10 text-white/70 text-xs font-semibold px-3 py-1 rounded-full">10 semaines</span>
+          <span class="bg-white/10 text-white/70 text-xs font-semibold px-3 py-1 rounded-full">🤖 ML / IA</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold text-white mb-3">Machine Learning</h1>
+        <p class="text-white/70 text-lg max-w-xl">Des algorithmes classiques au Deep Learning, apprenez à créer des modèles prédictifs et à les déployer. Formation intensive de 10 semaines.</p>
+      </div>
+      <div class="bg-white/10 border border-white/20 rounded-2xl px-8 py-6 text-center backdrop-blur-sm">
+        <div class="text-white/50 text-sm mb-1">Prix de la formation</div>
+        <div class="text-4xl font-extrabold text-white">120 000</div>
+        <div class="text-white/60 text-sm mt-1">FCFA</div>
+        <a href="index.html#contact" class="mt-4 block px-6 py-2.5 bg-orange hover:bg-orange-dark text-white font-bold rounded-xl transition-all text-sm">S'inscrire maintenant</a>
+      </div>
+    </div>
+
+    <!-- Infos clés -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-10">
+      <div class="bg-white/10 rounded-xl px-4 py-3 text-center border border-white/10">
+        <div class="text-2xl font-extrabold text-white">10</div>
+        <div class="text-white/50 text-xs mt-0.5">Semaines</div>
+      </div>
+      <div class="bg-white/10 rounded-xl px-4 py-3 text-center border border-white/10">
+        <div class="text-2xl font-extrabold text-white">60h</div>
+        <div class="text-white/50 text-xs mt-0.5">De contenu</div>
+      </div>
+      <div class="bg-white/10 rounded-xl px-4 py-3 text-center border border-white/10">
+        <div class="text-2xl font-extrabold text-white">3</div>
+        <div class="text-white/50 text-xs mt-0.5">Projets ML</div>
+      </div>
+      <div class="bg-white/10 rounded-xl px-4 py-3 text-center border border-white/10">
+        <div class="text-2xl font-extrabold text-white">✓</div>
+        <div class="text-white/50 text-xs mt-0.5">Certificat</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Programme -->
+<section class="py-16 px-6">
+  <div class="max-w-5xl mx-auto">
+
+    <h2 class="text-2xl font-extrabold text-navy mb-2">Programme semaine par semaine</h2>
+    <p class="text-gray-500 mb-10">Des bases théoriques aux implémentations concrètes — chaque semaine intègre code, maths et cas d'usage réels.</p>
+
+    <div class="space-y-5">
+
+      <!-- Semaine 1 -->
+      <div class="week-card bg-white rounded-2xl border border-gray-100 overflow-hidden">
+        <div class="flex items-center gap-4 p-5 border-b border-gray-50">
+          <div class="week-number bg-[#6D28D9]/10 text-[#6D28D9]">S1</div>
+          <div>
+            <div class="font-extrabold text-navy text-lg">Fondamentaux du Machine Learning</div>
+            <div class="text-gray-400 text-sm">Types de ML, workflow, Scikit-learn, évaluation</div>
+          </div>
+          <span class="ml-auto text-xs text-gray-400 bg-gray-50 px-3 py-1 rounded-full border">6h</span>
+        </div>
+        <div class="p-5">
+          <div class="grid sm:grid-cols-2 gap-x-8">
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-[#6D28D9] mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Apprentissage supervisé, non supervisé, par renforcement</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-[#6D28D9] mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Workflow ML : données → modèle → évaluation → déploiement</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-[#6D28D9] mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Introduction à Scikit-learn (pipeline, transformers)</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-[#6D28D9] mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Train/test split, validation croisée (cross-validation)</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-[#6D28D9] mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Métriques : accuracy, precision, recall, F1, AUC-ROC</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-[#6D28D9] mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">🛠 Exercice : premier modèle de classification</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Semaine 2 -->
+      <div class="week-card bg-white rounded-2xl border border-gray-100 overflow-hidden">
+        <div class="flex items-center gap-4 p-5 border-b border-gray-50">
+          <div class="week-number bg-orange/10 text-orange">S2</div>
+          <div>
+            <div class="font-extrabold text-navy text-lg">Feature Engineering & Prétraitement</div>
+            <div class="text-gray-400 text-sm">Pipelines Scikit-learn, encodage, scaling, sélection de variables</div>
+          </div>
+          <span class="ml-auto text-xs text-gray-400 bg-gray-50 px-3 py-1 rounded-full border">6h</span>
+        </div>
+        <div class="p-5">
+          <div class="grid sm:grid-cols-2 gap-x-8">
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-orange mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Feature scaling : StandardScaler, MinMaxScaler, RobustScaler</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-orange mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Encodage : OneHotEncoder, OrdinalEncoder, TargetEncoder</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-orange mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Imputation de valeurs manquantes (SimpleImputer, KNNImputer)</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-orange mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Sélection de features : SelectKBest, RFE, importance d'arbres</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-orange mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Création de features dérivées (feature engineering)</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-orange mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">🛠 Pipeline Scikit-learn complet sur dataset réel</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Semaine 3 -->
+      <div class="week-card bg-white rounded-2xl border border-gray-100 overflow-hidden">
+        <div class="flex items-center gap-4 p-5 border-b border-gray-50">
+          <div class="week-number bg-green-500/10 text-green-600">S3</div>
+          <div>
+            <div class="font-extrabold text-navy text-lg">Régression Linéaire & Logistique</div>
+            <div class="text-gray-400 text-sm">Modèles fondamentaux, régularisation, interprétabilité</div>
+          </div>
+          <span class="ml-auto text-xs text-gray-400 bg-gray-50 px-3 py-1 rounded-full border">6h</span>
+        </div>
+        <div class="p-5">
+          <div class="grid sm:grid-cols-2 gap-x-8">
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-green-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Régression linéaire simple et multiple</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-green-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Régularisation : Ridge (L2), Lasso (L1), ElasticNet</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-green-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Régression logistique et frontière de décision</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-green-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Interprétation des coefficients et odds ratio</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-green-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Métriques de régression : MSE, RMSE, MAE, R²</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-green-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">🛠 Prédiction du prix de l'immobilier à Dakar</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Semaine 4 -->
+      <div class="week-card bg-white rounded-2xl border border-gray-100 overflow-hidden">
+        <div class="flex items-center gap-4 p-5 border-b border-gray-50">
+          <div class="week-number bg-teal-500/10 text-teal-600">S4</div>
+          <div>
+            <div class="font-extrabold text-navy text-lg">Arbres de décision & Ensemble Methods</div>
+            <div class="text-gray-400 text-sm">Decision Tree, Random Forest, Gradient Boosting</div>
+          </div>
+          <span class="ml-auto text-xs text-gray-400 bg-gray-50 px-3 py-1 rounded-full border">6h</span>
+        </div>
+        <div class="p-5">
+          <div class="grid sm:grid-cols-2 gap-x-8">
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-teal-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Arbres de décision : critères de split (Gini, entropie)</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-teal-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Overfitting et élagage (pruning)</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-teal-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Random Forest : bagging et feature importance</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-teal-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Gradient Boosting : XGBoost, LightGBM</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-teal-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Hyperparameter tuning : GridSearchCV, RandomizedSearchCV</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-teal-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">🛠 Détection de fraude bancaire avec XGBoost</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Semaine 5 -->
+      <div class="week-card bg-white rounded-2xl border border-gray-100 overflow-hidden">
+        <div class="flex items-center gap-4 p-5 border-b border-gray-50">
+          <div class="week-number bg-navy/10 text-navy">S5</div>
+          <div>
+            <div class="font-extrabold text-navy text-lg">SVM & K-Nearest Neighbors</div>
+            <div class="text-gray-400 text-sm">Noyaux, hyperplans, distance, cas d'usage</div>
+          </div>
+          <span class="ml-auto text-xs text-gray-400 bg-gray-50 px-3 py-1 rounded-full border">6h</span>
+        </div>
+        <div class="p-5">
+          <div class="grid sm:grid-cols-2 gap-x-8">
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-navy mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">SVM : marges maximales, vecteurs de support</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-navy mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Noyaux (kernels) : linéaire, polynomial, RBF</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-navy mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">SVR pour la régression</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-navy mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">K-NN : mesures de distance, choix de K, curse of dimensionality</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-navy mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Comparaison des modèles et benchmarking</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-navy mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">🛠 Classification de pathologies médicales (SVM)</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Semaine 6 -->
+      <div class="week-card bg-white rounded-2xl border border-gray-100 overflow-hidden">
+        <div class="flex items-center gap-4 p-5 border-b border-gray-50">
+          <div class="week-number bg-rose-500/10 text-rose-600">S6</div>
+          <div>
+            <div class="font-extrabold text-navy text-lg">Apprentissage non supervisé — Clustering</div>
+            <div class="text-gray-400 text-sm">K-Means, DBSCAN, réduction de dimension (PCA)</div>
+          </div>
+          <span class="ml-auto text-xs text-gray-400 bg-gray-50 px-3 py-1 rounded-full border">6h</span>
+        </div>
+        <div class="p-5">
+          <div class="grid sm:grid-cols-2 gap-x-8">
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-rose-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">K-Means : inertie, méthode du coude, silhouette score</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-rose-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Clustering hiérarchique (dendrogramme)</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-rose-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">DBSCAN : clusters de formes arbitraires, outliers</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-rose-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">PCA : réduction de dimensions et visualisation</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-rose-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">t-SNE pour visualisation de données haute dimension</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-rose-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">🛠 Segmentation clients e-commerce UEMOA</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Semaine 7 -->
+      <div class="week-card bg-white rounded-2xl border border-gray-100 overflow-hidden">
+        <div class="flex items-center gap-4 p-5 border-b border-gray-50">
+          <div class="week-number bg-amber-500/10 text-amber-600">S7</div>
+          <div>
+            <div class="font-extrabold text-navy text-lg">Introduction aux Réseaux de Neurones</div>
+            <div class="text-gray-400 text-sm">Perceptron, backpropagation, ANN avec TensorFlow/Keras</div>
+          </div>
+          <span class="ml-auto text-xs text-gray-400 bg-gray-50 px-3 py-1 rounded-full border">6h</span>
+        </div>
+        <div class="p-5">
+          <div class="grid sm:grid-cols-2 gap-x-8">
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-amber-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Perceptron et réseaux fully-connected</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-amber-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Fonctions d'activation : ReLU, sigmoid, softmax</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-amber-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Rétropropagation et descente de gradient</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-amber-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Construction d'un réseau avec Keras (Sequential, Dense)</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-amber-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Optimiseurs : SGD, Adam, learning rate scheduling</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-amber-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">🛠 Réseau de neurones de prédiction de churn</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Semaine 8 -->
+      <div class="week-card bg-white rounded-2xl border border-gray-100 overflow-hidden">
+        <div class="flex items-center gap-4 p-5 border-b border-gray-50">
+          <div class="week-number bg-indigo-500/10 text-indigo-600">S8</div>
+          <div>
+            <div class="font-extrabold text-navy text-lg">Deep Learning — CNN & NLP</div>
+            <div class="text-gray-400 text-sm">Réseaux convolutifs, traitement du texte, embeddings</div>
+          </div>
+          <span class="ml-auto text-xs text-gray-400 bg-gray-50 px-3 py-1 rounded-full border">6h</span>
+        </div>
+        <div class="p-5">
+          <div class="grid sm:grid-cols-2 gap-x-8">
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">CNN : convolution, pooling, feature maps</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Transfer learning (ResNet, MobileNet, VGG)</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">NLP : tokenisation, TF-IDF, Word2Vec</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Introduction aux Transformers et Hugging Face</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Fine-tuning de modèles pré-entraînés</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-indigo-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">🛠 Classificateur d'images / analyse de sentiment</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Semaine 9 -->
+      <div class="week-card bg-white rounded-2xl border border-gray-100 overflow-hidden">
+        <div class="flex items-center gap-4 p-5 border-b border-gray-50">
+          <div class="week-number bg-cyan-500/10 text-cyan-600">S9</div>
+          <div>
+            <div class="font-extrabold text-navy text-lg">MLOps & Déploiement de modèles</div>
+            <div class="text-gray-400 text-sm">MLflow, FastAPI, Docker, monitoring en production</div>
+          </div>
+          <span class="ml-auto text-xs text-gray-400 bg-gray-50 px-3 py-1 rounded-full border">6h</span>
+        </div>
+        <div class="p-5">
+          <div class="grid sm:grid-cols-2 gap-x-8">
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-cyan-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Sérialisation de modèles (pickle, joblib, ONNX)</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-cyan-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Tracking d'expériences avec MLflow</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-cyan-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Création d'une API REST avec FastAPI</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-cyan-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Containerisation avec Docker</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-cyan-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Monitoring de la dérive des données (data drift)</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-cyan-500 mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">🛠 Déploiement d'un modèle ML en production</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Semaine 10 — Certification -->
+      <div class="week-card bg-white rounded-2xl border border-[#FFD43B]/40 overflow-hidden">
+        <div class="flex items-center gap-4 p-5 border-b border-[#FFD43B]/20 bg-[#FFD43B]/5">
+          <div class="week-number bg-[#FFD43B]/20 text-[#B8860B]">S10</div>
+          <div>
+            <div class="font-extrabold text-navy text-lg">Projet Final & Certification</div>
+            <div class="text-gray-400 text-sm">Projet ML end-to-end, soutenance, remise du certificat</div>
+          </div>
+          <span class="ml-auto text-xs font-bold text-[#B8860B] bg-[#FFD43B]/20 px-3 py-1 rounded-full border border-[#FFD43B]/40">Certification</span>
+        </div>
+        <div class="p-5">
+          <div class="grid sm:grid-cols-2 gap-x-8">
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-[#B8860B] mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Cadrage et choix du problème ML (dataset libre)</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-[#B8860B] mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Pipeline complet : EDA → modèle → tuning → déploiement API</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-[#B8860B] mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Documentation et publication sur GitHub</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-[#B8860B] mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Soutenance devant le jury DigitalMatis</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-[#B8860B] mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">Révision des concepts clés et Q&A final</span></div>
+            <div class="topic-item"><span class="w-1.5 h-1.5 rounded-full bg-[#B8860B] mt-1.5 flex-shrink-0"></span><span class="text-sm text-gray-600">🏆 Remise du certificat Machine Learning DigitalMatis</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Prérequis & objectifs -->
+    <div class="grid md:grid-cols-2 gap-6 mt-12">
+      <div class="bg-white rounded-2xl border border-gray-100 p-6">
+        <h3 class="font-extrabold text-navy mb-4 flex items-center gap-2">
+          <span class="w-8 h-8 rounded-lg bg-navy/10 flex items-center justify-center text-navy">✓</span>
+          Prérequis
+        </h3>
+        <ul class="space-y-2 text-sm text-gray-600">
+          <li class="flex items-center gap-2"><span class="text-green-500">✓</span>Avoir suivi Data Science & Analyse ou niveau équivalent</li>
+          <li class="flex items-center gap-2"><span class="text-green-500">✓</span>Maîtriser Pandas, NumPy et les statistiques de base</li>
+          <li class="flex items-center gap-2"><span class="text-green-500">✓</span>Notions de mathématiques : algèbre linéaire, probabilités</li>
+          <li class="flex items-center gap-2"><span class="text-green-500">✓</span>GPU conseillé (ou accès Google Colab Pro) pour les semaines 7-8</li>
+        </ul>
+      </div>
+      <div class="bg-white rounded-2xl border border-gray-100 p-6">
+        <h3 class="font-extrabold text-navy mb-4 flex items-center gap-2">
+          <span class="w-8 h-8 rounded-lg bg-orange/10 flex items-center justify-center text-orange">🎯</span>
+          Objectifs à l'issue de la formation
+        </h3>
+        <ul class="space-y-2 text-sm text-gray-600">
+          <li class="flex items-center gap-2"><span class="text-orange">→</span>Maîtriser les algorithmes ML supervisés et non supervisés</li>
+          <li class="flex items-center gap-2"><span class="text-orange">→</span>Construire et déployer des modèles Deep Learning</li>
+          <li class="flex items-center gap-2"><span class="text-orange">→</span>Mettre en production une API ML avec FastAPI + Docker</li>
+          <li class="flex items-center gap-2"><span class="text-orange">→</span>Présenter un portfolio ML crédible sur GitHub</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-12 bg-gradient-to-br from-[#6D28D9] to-navy rounded-2xl p-8 text-center">
+      <h3 class="text-2xl font-extrabold text-white mb-2">Devenez un expert ML</h3>
+      <p class="text-white/60 mb-6">Formation intensive — 10 semaines, 3 projets, 1 certificat. Places limitées à 10 apprenants.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="index.html#contact" class="px-8 py-3.5 bg-orange hover:bg-orange-dark text-white font-bold rounded-xl transition-all hover:-translate-y-0.5 shadow-lg shadow-orange/30">
+          S'inscrire — 120 000 FCFA
+        </a>
+        <a href="index.html#contact" class="px-8 py-3.5 border border-white/20 text-white hover:border-orange hover:text-orange font-semibold rounded-xl transition-all">
+          Poser une question
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Footer minimal -->
+<footer class="bg-navy-deeper py-6 text-center text-white/30 text-sm">
+  © 2026 DigitalMatis Sarl · <a href="index.html" class="hover:text-orange transition-colors">Retour au site</a>
+</footer>
+
+</body>
+</html>
