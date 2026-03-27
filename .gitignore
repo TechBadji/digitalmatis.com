@@ -1,0 +1,16 @@
+# Secrets
+trading-bot/.env
+trading-bot/*.env
+
+# Python
+trading-bot/venv/
+trading-bot/__pycache__/
+trading-bot/**/__pycache__/
+trading-bot/*.pyc
+
+# Base de données locale
+trading-bot/trades.db
+
+# Logs
+deploy.log
+*.log

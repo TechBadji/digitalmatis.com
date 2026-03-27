@@ -33,11 +33,19 @@ if ($branch !== 'refs/heads/main') {
     die('Branch ignored: ' . $branch);
 }
 
-// ─── Déclenchement du deploy ─────────────────────
+// ─── Déclenchement du deploy site ────────────────
 $output = shell_exec('sudo /usr/bin/git -C /opt/bitnami/apache/htdocs pull origin main 2>&1');
 
+// ─── Mise à jour des dépendances bot si besoin ───
+$pipOutput = shell_exec('cd /opt/bitnami/apache/htdocs/trading-bot && /home/bitnami/trading-bot-venv/bin/pip install -q -r requirements.txt 2>&1');
+
+// ─── Redémarrage du bot trading ──────────────────
+$botOutput = shell_exec('sudo /bin/systemctl restart trading-bot 2>&1');
+
 // ─── Log ──────────────────────────────────────────
-$logLine = '[' . date('Y-m-d H:i:s') . '] DEPLOY OK' . PHP_EOL . $output . PHP_EOL;
+$logLine = '[' . date('Y-m-d H:i:s') . '] DEPLOY OK' . PHP_EOL
+         . 'Site: ' . $output . PHP_EOL
+         . 'Bot restart: ' . $botOutput . PHP_EOL;
 file_put_contents('/opt/bitnami/apache/htdocs/deploy.log', $logLine, FILE_APPEND);
 
 http_response_code(200);
