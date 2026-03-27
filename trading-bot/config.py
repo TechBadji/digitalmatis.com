@@ -3,9 +3,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# Exchange (Bybit — pas de restriction géographique sur serveurs AWS)
-BYBIT_API_KEY    = os.getenv("BYBIT_API_KEY", "")
-BYBIT_API_SECRET = os.getenv("BYBIT_API_SECRET", "")
+# Exchange
+BINANCE_API_KEY    = os.getenv("BINANCE_API_KEY", "")
+BINANCE_API_SECRET = os.getenv("BINANCE_API_SECRET", "")
 
 # Telegram
 TELEGRAM_TOKEN   = os.getenv("TELEGRAM_BOT_TOKEN", "")
