@@ -1,15 +1,16 @@
 import pandas as pd
-import pandas_ta as ta
+from ta.momentum import RSIIndicator
+from ta.trend import EMAIndicator
 from config import RSI_PERIOD, RSI_OVERSOLD, RSI_OVERBOUGHT
 
 
 def compute_rsi(df: pd.DataFrame) -> pd.DataFrame:
     """Calcule le RSI et les moyennes mobiles sur le DataFrame."""
     df = df.copy()
-    df["rsi"]    = ta.rsi(df["close"], length=RSI_PERIOD)
-    df["ema20"]  = ta.ema(df["close"], length=20)
-    df["ema50"]  = ta.ema(df["close"], length=50)
-    df["ema200"] = ta.ema(df["close"], length=200)
+    df["rsi"]    = RSIIndicator(close=df["close"], window=RSI_PERIOD).rsi()
+    df["ema20"]  = EMAIndicator(close=df["close"], window=20).ema_indicator()
+    df["ema50"]  = EMAIndicator(close=df["close"], window=50).ema_indicator()
+    df["ema200"] = EMAIndicator(close=df["close"], window=200).ema_indicator()
     return df
 
 
