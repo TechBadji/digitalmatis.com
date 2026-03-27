@@ -1,25 +1,19 @@
 import ccxt
 import pandas as pd
-from config import BINANCE_API_KEY, BINANCE_API_SECRET, SYMBOL, TIMEFRAME, LIMIT
+from config import BYBIT_API_KEY, BYBIT_API_SECRET, SYMBOL, TIMEFRAME, LIMIT
 
 
 def get_exchange():
-    exchange = ccxt.binance({
-        "apiKey": BINANCE_API_KEY,
-        "secret": BINANCE_API_SECRET,
+    return ccxt.bybit({
+        "apiKey": BYBIT_API_KEY,
+        "secret": BYBIT_API_SECRET,
         "enableRateLimit": True,
-        "options": {
-            "defaultType": "spot",
-            "adjustForTimeDifference": True,
-            "recvWindow": 60000,
-        },
+        "options": {"defaultType": "spot"},
     })
-    exchange.load_time_difference()  # Synchronise l'horloge avec les serveurs Binance
-    return exchange
 
 
 def fetch_ohlcv(exchange=None) -> pd.DataFrame:
-    """Récupère les bougies OHLCV depuis Binance."""
+    """Récupère les bougies OHLCV depuis Bybit."""
     if exchange is None:
         exchange = get_exchange()
 
